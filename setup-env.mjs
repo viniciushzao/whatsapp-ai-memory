@@ -1,5 +1,34 @@
 import fs from "node:fs";
 import path from "node:path";
+import dns from "node:dns";
+import { fileURLToPath } from "node:url";
+
+// Garante resolucao DNS imediata para dominios recem-restaurados (ex: Supabase)
+try {
+  dns.setServers(["8.8.8.8", "1.1.1.1"]);
+  const origLookup = dns.lookup.bind(dns);
+  dns.lookup = (hostname, options, callback) => {
+    const cb = typeof options === "function" ? options : callback;
+    const opts = typeof options === "function" ? {} : options || {};
+    origLookup(hostname, options, (err, address, family) => {
+      if (!err) return cb(null, address, family);
+      dns.resolve4(hostname, (rErr, addresses) => {
+        if (rErr || !addresses || addresses.length === 0) {
+          return cb(err, address, family);
+        }
+        if (opts && opts.all) {
+          return cb(
+            null,
+            addresses.map((a) => ({ address: a, family: 4 }))
+          );
+        }
+        return cb(null, addresses[0], 4);
+      });
+    });
+  };
+} catch {
+  // Ignora caso nao permitido pelo SO
+}
 
 /**
  * Carrega as variaveis do arquivo .env local sem dependencias externas
@@ -72,6 +101,6 @@ SUPABASE_ACCESS_TOKEN=${CLI_TOKEN}
   console.log("[OK] Arquivo .env atualizado com as chaves mais recentes do Supabase!");
 }
 
-if (process.argv[1] && import.meta.url === `file://${process.argv[1].replace(/\\/g, "/")}`) {
+if (process.argv[1] && path.resolve(process.argv[1]) === path.resolve(fileURLToPath(import.meta.url))) {
   generateEnv();
 }
