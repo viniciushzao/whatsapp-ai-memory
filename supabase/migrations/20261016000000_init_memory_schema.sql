@@ -1,1 +1,257 @@
-LS0gSGFiaWxpdGEgYSBleHRlbnNhbyBwZ3ZlY3RvciBwYXJhIGJ1c2NhIHNlbWFudGljYQpjcmVhdGUgZXh0ZW5zaW9uIGlmIG5vdCBleGlzdHMgdmVjdG9yOwoKLS0gPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQotLSBDQU1BREEgMTogTE9HIEVQSVNPRElDTyBCUlVUTyAocmF3X21lc3NhZ2VzKQotLSBSZWdpc3RyYSBkZSBmb3JtYSBpbXV0YXZlbCBjYWRhIG1lbnNhZ2VtIGRlIHRleHRvIG91IGF1ZGlvIGVudmlhZGEgbm8gV2hhdHNBcHAKLS0gPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQpjcmVhdGUgdGFibGUgaWYgbm90IGV4aXN0cyBwdWJsaWMucmF3X21lc3NhZ2VzICgKICAgIGlkIHV1aWQgcHJpbWFyeSBrZXkgZGVmYXVsdCBnZW5fcmFuZG9tX3V1aWQoKSwKICAgIHdoYXRzYXBwX21lc3NhZ2VfaWQgdGV4dCB1bmlxdWUgbm90IG51bGwsCiAgICBzZW5kZXJfcGhvbmUgdGV4dCBub3QgbnVsbCwKICAgIG1lZGlhX3R5cGUgdGV4dCBub3QgbnVsbCBjaGVjayAobWVkaWFfdHlwZSBpbiAoJ3RleHQnLCAnYXVkaW8nKSksCiAgICByYXdfY29udGVudCB0ZXh0IG5vdCBudWxsLAogICAgY3JlYXRlZF9hdCB0aW1lc3RhbXB0eiBub3QgbnVsbCBkZWZhdWx0IG5vdygpCik7CgpjcmVhdGUgaW5kZXggaWYgbm90IGV4aXN0cyBpZHhfcmF3X21lc3NhZ2VzX3NlbmRlcl9jcmVhdGVkCiAgICBvbiBwdWJsaWMucmF3X21lc3NhZ2VzIChzZW5kZXJfcGhvbmUsIGNyZWF0ZWRfYXQgZGVzYyk7CgotLSA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09Ci0tIENBTUFEQSAyOiBGQVRPUyBTRU1BTlRJQ09TIFZFUlNJT05BRE9TIChtZW1vcmllcykKLS0gSW5zcGlyYWRvIG5hIGFycXVpdGV0dXJhIGRvIGFpLW1lbW9yeTogaXNfbGF0ZXN0ICsgY2FkZWlhIHN1cGVyc2VkZXNfaWQKLS0gPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQpjcmVhdGUgdGFibGUgaWYgbm90IGV4aXN0cyBwdWJsaWMubWVtb3JpZXMgKAogICAgaWQgdXVpZCBwcmltYXJ5IGtleSBkZWZhdWx0IGdlbl9yYW5kb21fdXVpZCgpLAogICAgcmF3X21lc3NhZ2VfaWQgdXVpZCByZWZlcmVuY2VzIHB1YmxpYy5yYXdfbWVzc2FnZXMoaWQpIG9uIGRlbGV0ZSBzZXQgbnVsbCwKICAgIHNlbmRlcl9waG9uZSB0ZXh0IG5vdCBudWxsLAogICAgdG9waWNfa2V5IHRleHQgbm90IG51bGwsCiAgICBjYXRlZ29yeSB0ZXh0IG5vdCBudWxsIGNoZWNrIChjYXRlZ29yeSBpbiAoJ2ZhdG8nLCAncmVncmEnLCAnZ290Y2hhJywgJ2RlY2lzYW8nLCAnZmluYW5jZWlybycsICdsZW1icmV0ZScsICdwZXNzb2FsJywgJ3Byb2pldG8nKSksCiAgICBjb250ZW50IHRleHQgbm90IG51bGwsCiAgICBlbWJlZGRpbmcgdmVjdG9yKDc2OCkgbm90IG51bGwsCiAgICBmdHMgdHN2ZWN0b3IgZ2VuZXJhdGVkIGFsd2F5cyBhcyAodG9fdHN2ZWN0b3IoJ3BvcnR1Z3Vlc2UnLCBjb2FsZXNjZSh0b3BpY19rZXksICcnKSB8fCAnICcgfHwgY29hbGVzY2UoY29udGVudCwgJycpKSkgc3RvcmVkLAogICAgaXNfbGF0ZXN0IGJvb2xlYW4gbm90IG51bGwgZGVmYXVsdCB0cnVlLAogICAgc3VwZXJzZWRlc19pZCB1dWlkIHJlZmVyZW5jZXMgcHVibGljLm1lbW9yaWVzKGlkKSBvbiBkZWxldGUgc2V0IG51bGwsCiAgICBjcmVhdGVkX2F0IHRpbWVzdGFtcHR6IG5vdCBudWxsIGRlZmF1bHQgbm93KCkKKTsKCi0tIEluZGljZXMgcGFyYSBidXNjYSBoaWJyaWRhIChEZW5zZSBITlNXICsgU3BhcnNlIEdJTiBGVFMpIGUgZmlsdHJhZ2VtIHRlbXBvcmFsCmNyZWF0ZSBpbmRleCBpZiBub3QgZXhpc3RzIGlkeF9tZW1vcmllc19lbWJlZGRpbmdfaG5zdwogICAgb24gcHVibGljLm1lbW9yaWVzIHVzaW5nIGhuc3cgKGVtYmVkZGluZyB2ZWN0b3JfY29zaW5lX29wcyk7CgpjcmVhdGUgaW5kZXggaWYgbm90IGV4aXN0cyBpZHhfbWVtb3JpZXNfZnRzX2dpbgogICAgb24gcHVibGljLm1lbW9yaWVzIHVzaW5nIGdpbiAoZnRzKTsKCmNyZWF0ZSBpbmRleCBpZiBub3QgZXhpc3RzIGlkeF9tZW1vcmllc19sYXRlc3Rfc2VuZGVyCiAgICBvbiBwdWJsaWMubWVtb3JpZXMgKHNlbmRlcl9waG9uZSwgaXNfbGF0ZXN0LCBjcmVhdGVkX2F0IGRlc2MpOwoKY3JlYXRlIGluZGV4IGlmIG5vdCBleGlzdHMgaWR4X21lbW9yaWVzX3N1cGVyc2VkZXMKICAgIG9uIHB1YmxpYy5tZW1vcmllcyAoc3VwZXJzZWRlc19pZCk7CgotLSA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09Ci0tIEZVTkNBTyBSUEMgMTogQnVzY2FyIG1lbW9yaWFzIGF0aXZhcyBjYW5kaWRhdGFzIHNvYnJlIG8gbWVzbW8gYXNzdW50bwotLSBVc2FkYSBubyBtb21lbnRvIGRvIFNUT1JFIHBhcmEgZGV0ZWN0YXIgc2UgbyB1c3VhcmlvIGVzdGEgYXR1YWxpemFuZG8gYWxnbyBhbnRpZ28KLS0gPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQpjcmVhdGUgb3IgcmVwbGFjZSBmdW5jdGlvbiBwdWJsaWMuZmluZF9jYW5kaWRhdGVfbWVtb3JpZXNfZm9yX3VwZGF0ZSgKICAgIHBfc2VuZGVyX3Bob25lIHRleHQsCiAgICBwX3RvcGljX2tleSB0ZXh0LAogICAgcF9xdWVyeV9lbWJlZGRpbmcgdmVjdG9yKDc2OCksCiAgICBwX21hdGNoX2NvdW50IGludCBkZWZhdWx0IDUKKQpyZXR1cm5zIHRhYmxlICgKICAgIGlkIHV1aWQsCiAgICB0b3BpY19rZXkgdGV4dCwKICAgIGNhdGVnb3J5IHRleHQsCiAgICBjb250ZW50IHRleHQsCiAgICBzaW1pbGFyaXR5IGZsb2F0LAogICAgY3JlYXRlZF9hdCB0aW1lc3RhbXB0egopCmxhbmd1YWdlIHNxbApzdGFibGUKYXMgJCQKICAgIHNlbGVjdAogICAgICAgIG0uaWQsCiAgICAgICAgbS50b3BpY19rZXksCiAgICAgICAgbS5jYXRlZ29yeSwKICAgICAgICBtLmNvbnRlbnQsCiAgICAgICAgMSAtIChtLmVtYmVkZGluZyA8PT4gcF9xdWVyeV9lbWJlZGRpbmcpIGFzIHNpbWlsYXJpdHksCiAgICAgICAgbS5jcmVhdGVkX2F0CiAgICBmcm9tIHB1YmxpYy5tZW1vcmllcyBtCiAgICB3aGVyZSBtLnNlbmRlcl9waG9uZSA9IHBfc2VuZGVyX3Bob25lCiAgICAgIGFuZCBtLmlzX2xhdGVzdCA9IHRydWUKICAgICAgYW5kICgKICAgICAgICAgIGxvd2VyKG0udG9waWNfa2V5KSA9IGxvd2VyKHBfdG9waWNfa2V5KQogICAgICAgICAgb3IgKDEgLSAobS5lbWJlZGRpbmcgPD0+IHBfcXVlcnlfZW1iZWRkaW5nKSkgPj0gMC43MgogICAgICApCiAgICBvcmRlciBieQogICAgICAgIGNhc2Ugd2hlbiBsb3dlcihtLnRvcGljX2tleSkgPSBsb3dlcihwX3RvcGljX2tleSkgdGhlbiAwIGVsc2UgMSBlbmQsCiAgICAgICAgbS5lbWJlZGRpbmcgPD0+IHBfcXVlcnlfZW1iZWRkaW5nIGFzYwogICAgbGltaXQgcF9tYXRjaF9jb3VudDsKJCQ7CgotLSA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09Ci0tIEZVTkNBTyBSUEMgMjogSW5zZXJpciBub3ZhIHZlcnNhbyBkZSB1bWEgbWVtb3JpYSBzdWJzdGl0dWluZG8gYSBhbnRlcmlvcgotLSBHYXJhbnRlIGF0b21pY2lkYWRlIGFvIGF0dWFsaXphciBpc19sYXRlc3QgPSBmYWxzZSBuYSBhbnRpZ2EgZSBjcmlhciBhIG5vdmEKLS0gPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQpjcmVhdGUgb3IgcmVwbGFjZSBmdW5jdGlvbiBwdWJsaWMuc3VwZXJzZWRlX21lbW9yeSgKICAgIHBfb2xkX21lbW9yeV9pZCB1dWlkLAogICAgcF9yYXdfbWVzc2FnZV9pZCB1dWlkLAogICAgcF9zZW5kZXJfcGhvbmUgdGV4dCwKICAgIHBfdG9waWNfa2V5IHRleHQsCiAgICBwX2NhdGVnb3J5IHRleHQsCiAgICBwX2NvbnRlbnQgdGV4dCwKICAgIHBfZW1iZWRkaW5nIHZlY3Rvcig3NjgpCikKcmV0dXJucyB1dWlkCmxhbmd1YWdlIHBscGdzcWwKc2VjdXJpdHkgZGVmaW5lcgphcyAkJApkZWNsYXJlCiAgICB2X25ld19pZCB1dWlkOwpiZWdpbgogICAgdXBkYXRlIHB1YmxpYy5tZW1vcmllcwogICAgICAgc2V0IGlzX2xhdGVzdCA9IGZhbHNlCiAgICAgd2hlcmUgaWQgPSBwX29sZF9tZW1vcnlfaWQKICAgICAgIGFuZCBzZW5kZXJfcGhvbmUgPSBwX3NlbmRlcl9waG9uZTsKCiAgICBpbnNlcnQgaW50byBwdWJsaWMubWVtb3JpZXMgKAogICAgICAgIHJhd19tZXNzYWdlX2lkLAogICAgICAgIHNlbmRlcl9waG9uZSwKICAgICAgICB0b3BpY19rZXksCiAgICAgICAgY2F0ZWdvcnksCiAgICAgICAgY29udGVudCwKICAgICAgICBlbWJlZGRpbmcsCiAgICAgICAgaXNfbGF0ZXN0LAogICAgICAgIHN1cGVyc2VkZXNfaWQKICAgICkgdmFsdWVzICgKICAgICAgICBwX3Jhd19tZXNzYWdlX2lkLAogICAgICAgIHBfc2VuZGVyX3Bob25lLAogICAgICAgIHBfdG9waWNfa2V5LAogICAgICAgIHBfY2F0ZWdvcnksCiAgICAgICAgcF9jb250ZW50LAogICAgICAgIHBfZW1iZWRkaW5nLAogICAgICAgIHRydWUsCiAgICAgICAgcF9vbGRfbWVtb3J5X2lkCiAgICApCiAgICByZXR1cm5pbmcgaWQgaW50byB2X25ld19pZDsKCiAgICByZXR1cm4gdl9uZXdfaWQ7CmVuZDsKJCQ7CgotLSA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09Ci0tIEZVTkNBTyBSUEMgMzogQnVzY2EgSGlicmlkYSAoUlJGIGs9NjApICsgSGlzdG9yaWNvIENvbXBsZXRvIGRlIEFsdGVyYWNvZXMKLS0gQ29tYmluYSBidXNjYSBzZW1hbnRpY2EgKHBndmVjdG9yKSArIGJ1c2NhIGxleGljYSAoRlRTKSBlIHJlY29uc3Ryb2kgYSBjYWRlaWEKLS0gZGUgdmVyc29lcyBhbnRlcmlvcmVzIChzdXBlcnNlZGVzX2lkKSBwYXJhIGluZm9ybWFyIG11ZGFuY2FzIGFvIGxvbmdvIGRvIHRlbXBvCi0tID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KY3JlYXRlIG9yIHJlcGxhY2UgZnVuY3Rpb24gcHVibGljLnNlYXJjaF9tZW1vcmllc193aXRoX2hpc3RvcnkoCiAgICBwX3NlbmRlcl9waG9uZSB0ZXh0LAogICAgcF9xdWVyeV90ZXh0IHRleHQsCiAgICBwX3F1ZXJ5X2VtYmVkZGluZyB2ZWN0b3IoNzY4KSwKICAgIHBfbWF0Y2hfY291bnQgaW50IGRlZmF1bHQgNSwKICAgIHBfcnJmX2sgaW50IGRlZmF1bHQgNjAKKQpyZXR1cm5zIHRhYmxlICgKICAgIG1lbW9yeV9pZCB1dWlkLAogICAgdG9waWNfa2V5IHRleHQsCiAgICBjYXRlZ29yeSB0ZXh0LAogICAgbGF0ZXN0X2NvbnRlbnQgdGV4dCwKICAgIGxhdGVzdF9jcmVhdGVkX2F0IHRpbWVzdGFtcHR6LAogICAgcnJmX3Njb3JlIGZsb2F0LAogICAgaGFzX2NoYW5nZXMgYm9vbGVhbiwKICAgIHZlcnNpb25faGlzdG9yeSBqc29uYgopCmxhbmd1YWdlIHNxbApzdGFibGUKYXMgJCQKd2l0aCBzZW1hbnRpY19zZWFyY2ggYXMgKAogICAgc2VsZWN0CiAgICAgICAgbS5pZCwKICAgICAgICByb3dfbnVtYmVyKCkgb3ZlciAob3JkZXIgYnkgbS5lbWJlZGRpbmcgPD0+IHBfcXVlcnlfZW1iZWRkaW5nIGFzYykgYXMgcmFua19peAogICAgZnJvbSBwdWJsaWMubWVtb3JpZXMgbQogICAgd2hlcmUgbS5zZW5kZXJfcGhvbmUgPSBwX3NlbmRlcl9waG9uZQogICAgICBhbmQgbS5pc19sYXRlc3QgPSB0cnVlCiAgICBvcmRlciBieSBtLmVtYmVkZGluZyA8PT4gcF9xdWVyeV9lbWJlZGRpbmcgYXNjCiAgICBsaW1pdCAyNQopLApsZXhpY2FsX3NlYXJjaCBhcyAoCiAgICBzZWxlY3QKICAgICAgICBtLmlkLAogICAgICAgIHJvd19udW1iZXIoKSBvdmVyICgKICAgICAgICAgICAgb3JkZXIgYnkgdHNfcmFua19jZChtLmZ0cywgd2Vic2VhcmNoX3RvX3RzcXVlcnkoJ3BvcnR1Z3Vlc2UnLCBwX3F1ZXJ5X3RleHQpKSBkZXNjCiAgICAgICAgKSBhcyByYW5rX2l4CiAgICBmcm9tIHB1YmxpYy5tZW1vcmllcyBtCiAgICB3aGVyZSBtLnNlbmRlcl9waG9uZSA9IHBfc2VuZGVyX3Bob25lCiAgICAgIGFuZCBtLmlzX2xhdGVzdCA9IHRydWUKICAgICAgYW5kIG0uZnRzIEBAIHdlYnNlYXJjaF90b190c3F1ZXJ5KCdwb3J0dWd1ZXNlJywgcF9xdWVyeV90ZXh0KQogICAgbGltaXQgMjUKKSwKcnJmX2NvbWJpbmVkIGFzICgKICAgIHNlbGVjdAogICAgICAgIGNvYWxlc2NlKHMuaWQsIGwuaWQpIGFzIGlkLAogICAgICAgIGNvYWxlc2NlKDEuMCAvIChwX3JyZl9rICsgcy5yYW5rX2l4KSwgMC4wKSArCiAgICAgICAgY29hbGVzY2UoMS4wIC8gKHBfcnJmX2sgKyBsLnJhbmtfaXgpLCAwLjApIGFzIHNjb3JlCiAgICBmcm9tIHNlbWFudGljX3NlYXJjaCBzCiAgICBmdWxsIG91dGVyIGpvaW4gbGV4aWNhbF9zZWFyY2ggbCBvbiBzLmlkID0gbC5pZAogICAgb3JkZXIgYnkgc2NvcmUgZGVzYwogICAgbGltaXQgcF9tYXRjaF9jb3VudAopCnNlbGVjdAogICAgbS5pZCBhcyBtZW1vcnlfaWQsCiAgICBtLnRvcGljX2tleSwKICAgIG0uY2F0ZWdvcnksCiAgICBtLmNvbnRlbnQgYXMgbGF0ZXN0X2NvbnRlbnQsCiAgICBtLmNyZWF0ZWRfYXQgYXMgbGF0ZXN0X2NyZWF0ZWRfYXQsCiAgICByLnNjb3JlIGFzIHJyZl9zY29yZSwKICAgIChtLnN1cGVyc2VkZXNfaWQgaXMgbm90IG51bGwpIGFzIGhhc19jaGFuZ2VzLAogICAgY29hbGVzY2UoCiAgICAgICAgKAogICAgICAgICAgICB3aXRoIHJlY3Vyc2l2ZSBoaXN0b3J5X2NoYWluIGFzICgKICAgICAgICAgICAgICAgIHNlbGVjdAogICAgICAgICAgICAgICAgICAgIHByZXYuaWQsCiAgICAgICAgICAgICAgICAgICAgcHJldi5jb250ZW50LAogICAgICAgICAgICAgICAgICAgIHByZXYuY3JlYXRlZF9hdCwKICAgICAgICAgICAgICAgICAgICBwcmV2LnN1cGVyc2VkZXNfaWQsCiAgICAgICAgICAgICAgICAgICAgMSBhcyBkZXB0aAogICAgICAgICAgICAgICAgZnJvbSBwdWJsaWMubWVtb3JpZXMgcHJldgogICAgICAgICAgICAgICAgd2hlcmUgcHJldi5pZCA9IG0uc3VwZXJzZWRlc19pZAogICAgICAgICAgICAgICAgdW5pb24gYWxsCiAgICAgICAgICAgICAgICBzZWxlY3QKICAgICAgICAgICAgICAgICAgICBvbGRlci5pZCwKICAgICAgICAgICAgICAgICAgICBvbGRlci5jb250ZW50LAogICAgICAgICAgICAgICAgICAgIG9sZGVyLmNyZWF0ZWRfYXQsCiAgICAgICAgICAgICAgICAgICAgb2xkZXIuc3VwZXJzZWRlc19pZCwKICAgICAgICAgICAgICAgICAgICBoYy5kZXB0aCArIDEKICAgICAgICAgICAgICAgIGZyb20gcHVibGljLm1lbW9yaWVzIG9sZGVyCiAgICAgICAgICAgICAgICBqb2luIGhpc3RvcnlfY2hhaW4gaGMgb24gb2xkZXIuaWQgPSBoYy5zdXBlcnNlZGVzX2lkCiAgICAgICAgICAgICAgICB3aGVyZSBoYy5kZXB0aCA8IDIwCiAgICAgICAgICAgICkKICAgICAgICAgICAgc2VsZWN0IGpzb25iX2FnZygKICAgICAgICAgICAgICAgIGpzb25iX2J1aWxkX29iamVjdCgKICAgICAgICAgICAgICAgICAgICAnaWQnLCBoYy5pZCwKICAgICAgICAgICAgICAgICAgICAnY29udGVudCcsIGhjLmNvbnRlbnQsCiAgICAgICAgICAgICAgICAgICAgJ2NyZWF0ZWRfYXQnLCBoYy5jcmVhdGVkX2F0CiAgICAgICAgICAgICAgICApCiAgICAgICAgICAgICAgICBvcmRlciBieSBoYy5jcmVhdGVkX2F0IGFzYwogICAgICAgICAgICApCiAgICAgICAgICAgIGZyb20gaGlzdG9yeV9jaGFpbiBoYwogICAgICAgICksCiAgICAgICAgJ1tdJzo6anNvbmIKICAgICkgYXMgdmVyc2lvbl9oaXN0b3J5CmZyb20gcnJmX2NvbWJpbmVkIHIKam9pbiBwdWJsaWMubWVtb3JpZXMgbSBvbiBtLmlkID0gci5pZApvcmRlciBieSByLnNjb3JlIGRlc2M7CiQkOwo=
+-- Habilita a extensao pgvector para busca semantica
+create extension if not exists vector;
+
+-- ============================================================================
+-- CAMADA 1: LOG EPISODICO BRUTO (raw_messages)
+-- Registra de forma imutavel cada mensagem de texto ou audio enviada no WhatsApp
+-- ============================================================================
+create table if not exists public.raw_messages (
+    id uuid primary key default gen_random_uuid(),
+    whatsapp_message_id text unique not null,
+    sender_phone text not null,
+    media_type text not null check (media_type in ('text', 'audio')),
+    raw_content text not null,
+    created_at timestamptz not null default now()
+);
+
+create index if not exists idx_raw_messages_sender_created
+    on public.raw_messages (sender_phone, created_at desc);
+
+-- ============================================================================
+-- CAMADA 2: FATOS SEMANTICOS VERSIONADOS (memories)
+-- Inspirado na arquitetura do ai-memory: is_latest + cadeia supersedes_id
+-- ============================================================================
+create table if not exists public.memories (
+    id uuid primary key default gen_random_uuid(),
+    raw_message_id uuid references public.raw_messages(id) on delete set null,
+    sender_phone text not null,
+    topic_key text not null,
+    category text not null check (category in ('fato', 'regra', 'gotcha', 'decisao', 'financeiro', 'lembrete', 'pessoal', 'projeto')),
+    content text not null,
+    embedding vector(768) not null,
+    fts tsvector generated always as (to_tsvector('portuguese', coalesce(topic_key, '') || ' ' || coalesce(content, ''))) stored,
+    is_latest boolean not null default true,
+    supersedes_id uuid references public.memories(id) on delete set null,
+    created_at timestamptz not null default now()
+);
+
+-- Indices para busca hibrida (Dense HNSW + Sparse GIN FTS) e filtragem temporal
+create index if not exists idx_memories_embedding_hnsw
+    on public.memories using hnsw (embedding vector_cosine_ops);
+
+create index if not exists idx_memories_fts_gin
+    on public.memories using gin (fts);
+
+create index if not exists idx_memories_latest_sender
+    on public.memories (sender_phone, is_latest, created_at desc);
+
+create index if not exists idx_memories_supersedes
+    on public.memories (supersedes_id);
+
+-- ============================================================================
+-- AUDITORIA E DEBUG: LOG DE WEBHOOKS (webhook_debug_logs)
+-- Registra eventos assincronos da Meta (mensagens recebidas, status de entrega, erros)
+-- ============================================================================
+create table if not exists public.webhook_debug_logs (
+    id bigint generated always as identity primary key,
+    payload jsonb not null,
+    created_at timestamptz not null default now()
+);
+
+create index if not exists idx_webhook_debug_logs_created_at
+    on public.webhook_debug_logs (created_at desc);
+
+-- ============================================================================
+-- FUNCAO RPC 1: Buscar memorias ativas candidatas sobre o mesmo assunto
+-- Usada no momento do STORE para detectar se o usuario esta atualizando algo antigo
+-- ============================================================================
+create or replace function public.find_candidate_memories_for_update(
+    p_sender_phone text,
+    p_topic_key text,
+    p_query_embedding vector(768),
+    p_match_count int default 5
+)
+returns table (
+    id uuid,
+    topic_key text,
+    category text,
+    content text,
+    similarity float,
+    created_at timestamptz
+)
+language sql
+stable
+as $$
+    select
+        m.id,
+        m.topic_key,
+        m.category,
+        m.content,
+        1 - (m.embedding <=> p_query_embedding) as similarity,
+        m.created_at
+    from public.memories m
+    where m.sender_phone = p_sender_phone
+      and m.is_latest = true
+      and (
+          lower(m.topic_key) = lower(p_topic_key)
+          or (1 - (m.embedding <=> p_query_embedding)) >= 0.72
+      )
+    order by
+        case when lower(m.topic_key) = lower(p_topic_key) then 0 else 1 end,
+        m.embedding <=> p_query_embedding asc
+    limit p_match_count;
+$$;
+
+-- ============================================================================
+-- FUNCAO RPC 2: Inserir nova versao de uma memoria substituindo a anterior
+-- Garante atomicidade ao atualizar is_latest = false na antiga e criar a nova
+-- ============================================================================
+create or replace function public.supersede_memory(
+    p_old_memory_id uuid,
+    p_raw_message_id uuid,
+    p_sender_phone text,
+    p_topic_key text,
+    p_category text,
+    p_content text,
+    p_embedding vector(768)
+)
+returns uuid
+language plpgsql
+security definer
+as $$
+declare
+    v_new_id uuid;
+begin
+    update public.memories
+       set is_latest = false
+     where id = p_old_memory_id
+       and sender_phone = p_sender_phone;
+
+    insert into public.memories (
+        raw_message_id,
+        sender_phone,
+        topic_key,
+        category,
+        content,
+        embedding,
+        is_latest,
+        supersedes_id
+    ) values (
+        p_raw_message_id,
+        p_sender_phone,
+        p_topic_key,
+        p_category,
+        p_content,
+        p_embedding,
+        true,
+        p_old_memory_id
+    )
+    returning id into v_new_id;
+
+    return v_new_id;
+end;
+$$;
+
+-- ============================================================================
+-- FUNCAO RPC 3: Busca Hibrida (RRF k=60) + Historico Completo de Alteracoes
+-- Combina busca semantica (pgvector) + busca lexica (FTS) e reconstroi a cadeia
+-- de versoes anteriores (supersedes_id) para informar mudancas ao longo do tempo
+-- ============================================================================
+create or replace function public.search_memories_with_history(
+    p_sender_phone text,
+    p_query_text text,
+    p_query_embedding vector(768),
+    p_match_count int default 5,
+    p_rrf_k int default 60
+)
+returns table (
+    memory_id uuid,
+    topic_key text,
+    category text,
+    latest_content text,
+    latest_created_at timestamptz,
+    rrf_score float,
+    has_changes boolean,
+    version_history jsonb
+)
+language sql
+stable
+as $$
+with semantic_search as (
+    select
+        m.id,
+        row_number() over (order by m.embedding <=> p_query_embedding asc) as rank_ix
+    from public.memories m
+    where m.sender_phone = p_sender_phone
+      and m.is_latest = true
+    order by m.embedding <=> p_query_embedding asc
+    limit 25
+),
+lexical_search as (
+    select
+        m.id,
+        row_number() over (
+            order by ts_rank_cd(m.fts, websearch_to_tsquery('portuguese', p_query_text)) desc
+        ) as rank_ix
+    from public.memories m
+    where m.sender_phone = p_sender_phone
+      and m.is_latest = true
+      and m.fts @@ websearch_to_tsquery('portuguese', p_query_text)
+    limit 25
+),
+rrf_combined as (
+    select
+        coalesce(s.id, l.id) as id,
+        coalesce(1.0 / (p_rrf_k + s.rank_ix), 0.0) +
+        coalesce(1.0 / (p_rrf_k + l.rank_ix), 0.0) as score
+    from semantic_search s
+    full outer join lexical_search l on s.id = l.id
+    order by score desc
+    limit p_match_count
+)
+select
+    m.id as memory_id,
+    m.topic_key,
+    m.category,
+    m.content as latest_content,
+    m.created_at as latest_created_at,
+    r.score as rrf_score,
+    (m.supersedes_id is not null) as has_changes,
+    coalesce(
+        (
+            with recursive history_chain as (
+                select
+                    prev.id,
+                    prev.content,
+                    prev.created_at,
+                    prev.supersedes_id,
+                    1 as depth
+                from public.memories prev
+                where prev.id = m.supersedes_id
+                union all
+                select
+                    older.id,
+                    older.content,
+                    older.created_at,
+                    older.supersedes_id,
+                    hc.depth + 1
+                from public.memories older
+                join history_chain hc on older.id = hc.supersedes_id
+                where hc.depth < 20
+            )
+            select jsonb_agg(
+                jsonb_build_object(
+                    'id', hc.id,
+                    'content', hc.content,
+                    'created_at', hc.created_at
+                )
+                order by hc.created_at asc
+            )
+            from history_chain hc
+        ),
+        '[]'::jsonb
+    ) as version_history
+from rrf_combined r
+join public.memories m on m.id = r.id
+order by r.score desc;
+$$;

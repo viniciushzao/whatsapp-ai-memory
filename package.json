@@ -1,0 +1,25 @@
+{
+  "name": "whatsapp-ai-memory",
+  "version": "1.0.0",
+  "description": "Agente de memoria pessoal episodica e semantica 24/7 no WhatsApp via Supabase e Gemini",
+  "main": "test-local.mjs",
+  "type": "module",
+  "scripts": {
+    "test": "node test-local.mjs",
+    "test:e2e": "node test-e2e-simulation.mjs",
+    "check:apis": "node check-apis.mjs",
+    "check:db": "node test-db.mjs",
+    "setup:env": "node setup-env.mjs",
+    "deploy": "supabase functions deploy whatsapp-webhook --no-verify-jwt"
+  },
+  "keywords": [
+    "whatsapp",
+    "ai",
+    "gemini",
+    "supabase",
+    "pgvector",
+    "memory"
+  ],
+  "author": "viniciushzao",
+  "license": "MIT"
+}

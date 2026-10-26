@@ -9,7 +9,12 @@ Sistema serverless de memoria episodica e semantica operado via WhatsApp (mensag
 ```text
 |-- .env.example                                      # Template de variaveis de ambiente
 |-- .gitignore                                       # Arquivos ignorados pelo Git
+|-- package.json                                      # Scripts de diagnostico, testes e deploy
 |-- README.md                                         # Documentacao oficial, setup e troubleshooting
+|-- setup-env.mjs                                     # Carregador e sincronizador de variaveis (.env)
+|-- check-apis.mjs                                    # Diagnostico de APIs (Gemini, Supabase e Meta)
+|-- test-db.mjs                                       # Verificacao de tabelas, RPCs e Webhook na nuvem
+|-- test-e2e-simulation.mjs                           # Simulacao E2E da Edge Function na nuvem
 |-- test-local.mjs                                    # Suite de testes automatizados locais
 `-- supabase/
     |-- migrations/
@@ -34,52 +39,57 @@ Sistema serverless de memoria episodica e semantica operado via WhatsApp (mensag
 3. **Classificacao e Busca Semantica:**
    - O Google Gemini analisa a mensagem (transcreve audio se necessario), classifica entre `STORE` e `QUERY`, gera os embeddings de 768 dimensoes via `gemini-embedding-001` e gerencia a evolucao temporal de fatos via `is_latest` e `supersedes_id`.
 
-### O unico ponto de bloqueio atual (O Erro 130497 da Meta):
-Ao tentar enviar a resposta de volta para o seu numero de WhatsApp no Brasil (`+55`), a Meta bloqueia a entrega assincrona com o erro:
-> `Error 130497: Business account is restricted from messaging users in this country.`
-
-**Causa:** O numero remetente padrao da Meta e um numero virtual de teste dos EUA (`+1 555-678-3716`). A politica de integridade anti-spam da Meta proibe contas de teste nao verificadas dos EUA de enviarem mensagens para numeros brasileiros (`+55`).
+### Pontos de Desbloqueio para Producao:
+1. **Chave da API Google Gemini (`GEMINI_API_KEY`):**
+   - Caso a chave atual apresente saldo pre-pago esgotado (`402 RESOURCE_EXHAUSTED`), gere uma nova API Key gratuita no [Google AI Studio](https://aistudio.google.com/apikey) ou adicione saldo ao projeto.
+2. **Token Permanente e Numero Brasileiro na Meta (`Error 130497` / `Error 190`):**
+   - Ao tentar enviar a resposta de volta para o seu numero de WhatsApp no Brasil (`+55`) usando o numero de teste americano (`+1 555-678-3716`), a Meta bloqueia a entrega assincrona com o erro `130497: Business account is restricted from messaging users in this country`.
+   - Alem disso, tokens temporarios de 24h expiram (`Error 190`). E necessario cadastrar um numero brasileiro (`+55`) e gerar um System User Token permanente.
 
 ---
 
 ## 3. Passo a Passo para Concluir a Aplicacao
 
-Para desbloquear o envio de respostas no WhatsApp, siga os passos abaixo:
+Siga os passos abaixo na ordem indicada:
 
-### Passo 1: Obter um Numero Virtual ou Linha Brasileira (+55)
-A Meta exige que o remetente seja um numero do Brasil para responder a usuarios brasileiros.
-- **Opcao 1 (Numero Fixo Virtual / VoIP - Recomendado):** Contrate um numero fixo virtual brasileiro (ex: via Voip do Brasil, FalaHub ou Twilio). O custo medio e de R$ 15 a R$ 30/mes e dispensa qualquer chip fisico.
-- **Opcao 2 (eSIM / Chip Digital):** Instale uma linha pre-paga digital via eSIM no seu proprio smartphone.
-- *Requisito:* O numero precisa apenas ser capaz de receber uma **chamada de voz** ou um **SMS** com o codigo de verificacao de 6 digitos da Meta.
+### Passo 1: Atualizar a Chave do Google Gemini (`GEMINI_API_KEY`)
+1. Acesse o [Google AI Studio](https://aistudio.google.com/apikey).
+2. Crie uma nova chave de API gratuita (Free Tier) ou recarregue os creditos do projeto atual.
+3. Atualize o valor de `GEMINI_API_KEY` no seu arquivo `.env` local.
 
-### Passo 2: Cadastrar o Numero na Meta Cloud API
-1. Acesse o painel [Meta for Developers](https://developers.facebook.com/) -> Aplicativo **MinhaMemoria**.
-2. No menu lateral, acesse **WhatsApp** -> **API Setup**.
-3. Na secao **Step 1: Select phone numbers**, clique em **Add phone number**.
-4. Informe o Nome do Perfil (ex: `Agente de Memoria`) e digite o numero brasileiro (`+55...`).
-5. Selecione o metodo de verificacao (**Ligacao telefonica** para numeros VoIP/Fixos ou **SMS** para celulares).
-6. Digite o codigo de 6 digitos recebido para validar a titularidade.
-7. Apos a validacao, a Meta gerara um novo **Phone Number ID**. Copie esse identificador.
+### Passo 2: Obter e Cadastrar um Numero Brasileiro (+55) na Meta
+A Meta exige que o remetente seja um numero do Brasil para responder a usuarios brasileiros:
+1. **Obter Linha (+55):** Utilize um numero fixo virtual/VoIP brasileiro (ex: Voip do Brasil, FalaHub, Twilio) ou um chip eSIM pre-pago exclusivo para o bot (capaz de receber SMS ou chamada de voz).
+2. Acesse o painel [Meta for Developers](https://developers.facebook.com/) -> Aplicativo **MinhaMemoria** -> **WhatsApp** -> **API Setup**.
+3. Em **Step 1: Select phone numbers**, clique em **Add phone number**.
+4. Informe o Nome do Perfil (`Agente de Memoria`), insira o numero brasileiro (`+55...`) e valide o codigo de 6 digitos via SMS ou ligacao.
+5. Copie o novo **Phone Number ID** gerado pela Meta.
 
-### Passo 3: Gerar o Token Permanente (System User)
-Para evitar que o bot pare de funcionar quando o token temporario expirar:
+### Passo 3: Gerar o Token Permanente (System User) na Meta
+Para evitar que o bot pare de funcionar a cada 24 horas:
 1. Acesse as [Configuracoes do Negocio da Meta](https://business.facebook.com/settings).
-2. Va em **Usuarios** -> **Usuarios do sistema** -> **Adicionar** (Nome: `AgenteMemoriaAdmin`, Funcao: *Admin*).
-3. Clique em **Adicionar ativos** -> **Aplicativos** -> Selecione `MinhaMemoria` e conceda controle total.
+2. Navegue ate **Usuarios** -> **Usuarios do sistema** -> **Adicionar** (Nome: `AgenteMemoriaAdmin`, Funcao: *Admin*).
+3. Clique em **Adicionar ativos** -> **Aplicativos** -> Selecione `MinhaMemoria` e marque **Controle total**.
 4. Clique em **Gerar novo token**, selecione validade **Nunca** (*Never*) e marque as permissoes:
    - `whatsapp_business_messaging`
    - `whatsapp_business_management`
-5. Copie o token permanente gerado.
+5. Copie o token permanente gerado e atualize `WHATSAPP_ACCESS_TOKEN` e `WHATSAPP_PHONE_NUMBER_ID` no seu arquivo `.env`.
 
-### Passo 4: Atualizar as Variaveis no Supabase
-Atualize os segredos no painel do Supabase (**Project Settings** -> **Edge Functions** -> **Secrets**) ou via CLI:
+### Passo 4: Sincronizar Segredos no Supabase e Validar
+Com o arquivo `.env` atualizado, sincronize os segredos na Edge Function do Supabase:
 ```powershell
-npx supabase secrets set `
+npx supabase secrets set --project-ref iuwzoefqwuopftbwquij `
+  GEMINI_API_KEY="SUA_NOVA_CHAVE_GEMINI" `
   WHATSAPP_PHONE_NUMBER_ID="NOVO_PHONE_NUMBER_ID_BRASILEIRO" `
   WHATSAPP_ACCESS_TOKEN="SEU_TOKEN_PERMANENTE"
 ```
-
-A partir desse momento, a restricao 130497 desaparece e o agente respondera instantaneamente no seu WhatsApp.
+Em seguida, rode a suite completa de verificacao local:
+```powershell
+npm test
+npm run check:apis
+npm run check:db
+npm run test:e2e
+```
 
 ---
 
@@ -116,8 +126,6 @@ Durante o desenvolvimento da solucao, enfrentamos e contornamos particularidades
 
 Como toda a arquitetura e serverless (executa no Supabase e na Meta), este projeto **nao depende de servidores locais ligados**.
 
-Para gerenciar, testar ou evoluir o codigo em qualquer nova maquina:
-
 1. **Pre-requisitos:**
    - [Node.js](https://nodejs.org/) (versao 18 ou superior).
    - [Supabase CLI](https://supabase.com/docs/guides/cli) (ou executando via `npx supabase`).
@@ -128,15 +136,10 @@ Para gerenciar, testar ou evoluir o codigo em qualquer nova maquina:
    cd whatsapp-ai-memory
    ```
 
-3. **Executar Testes Unitarios Locais:**
-   Os testes locais validam a allowlist com o 9o digito brasileiro, a gravacao em dupla camada e o algoritmo de versionamento temporal (`supersedes_id`):
-   ```bash
-   node test-local.mjs
-   ```
-
-4. **Fazer Deploy de Alteracoes nas Edge Functions:**
-   ```bash
-   npx supabase login
-   npx supabase link --project-ref iuwzoefqwuopftbwquij
-   npx supabase functions deploy whatsapp-webhook --no-verify-jwt
-   ```
+3. **Comandos NPM Disponiveis:**
+   - `npm test` — Executa os testes unitarios locais em memoria (Allowlist 9o digito, dupla camada, versionamento `supersedes_id` e busca RRF com historico).
+   - `npm run setup:env` — Sincroniza as chaves de API do Supabase diretamente no arquivo `.env`.
+   - `npm run check:apis` — Diagnostica a conectividade e validade das chaves do Gemini, Supabase e Meta Graph API.
+   - `npm run check:db` — Verifica tabelas, RPCs, logs de webhook e responde ao challenge GET da Edge Function.
+   - `npm run test:e2e` — Dispara uma simulacao real de payload de mensagem POST contra a Edge Function na nuvem.
+   - `npm run deploy` — Faz o deploy atualizado da Edge Function `whatsapp-webhook`.

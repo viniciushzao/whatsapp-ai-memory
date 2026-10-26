@@ -1,1 +1,338 @@
-LyoqCiAqIE1vZHVsbyBkZSBJbnRlbGlnZW5jaWEgQXJ0aWZpY2lhbCBjb20gR29vZ2xlIEdlbWluaSBBUEkKICogUHJvY2Vzc2EgdGV4dG8gZSBhdWRpbyBuYXRpdmFtZW50ZSwgZ2VyYSBlbWJlZGRpbmdzIGRlIDc2OCBkaW1lbnNvZXMsCiAqIGF2YWxpYSBhdHVhbGl6YWNvZXMgZGUgdmVyc2FvIG5vIHRlbXBvIGUgZm9ybWF0YSByZXNwb3N0YXMgY3VydGFzIGUgZGlyZXRhcy4KICovCgpleHBvcnQgdHlwZSBNZW1vcnlDYXRlZ29yeSA9CiAgfCAiZmF0byIKICB8ICJyZWdyYSIKICB8ICJnb3RjaGEiCiAgfCAiZGVjaXNhbyIKICB8ICJmaW5hbmNlaXJvIgogIHwgImxlbWJyZXRlIgogIHwgInBlc3NvYWwiCiAgfCAicHJvamV0byI7CgpleHBvcnQgaW50ZXJmYWNlIEFuYWx5emVkTWVzc2FnZSB7CiAgaW50ZW50OiAiU1RPUkUiIHwgIlFVRVJZIjsKICB0cmFuc2NyaXB0aW9uOiBzdHJpbmc7CiAgdG9waWNLZXk6IHN0cmluZzsKICBjYXRlZ29yeTogTWVtb3J5Q2F0ZWdvcnk7CiAgY2xlYW5GYWN0T3JRdWVyeTogc3RyaW5nOwogIHNob3J0U3RvcmVBY2s6IHN0cmluZzsKfQoKZXhwb3J0IGludGVyZmFjZSBDYW5kaWRhdGVNZW1vcnkgewogIGlkOiBzdHJpbmc7CiAgdG9waWNfa2V5OiBzdHJpbmc7CiAgY2F0ZWdvcnk6IHN0cmluZzsKICBjb250ZW50OiBzdHJpbmc7CiAgc2ltaWxhcml0eTogbnVtYmVyOwogIGNyZWF0ZWRfYXQ6IHN0cmluZzsKfQoKZXhwb3J0IGludGVyZmFjZSBSZXRyaWV2ZWRNZW1vcnlXaXRoSGlzdG9yeSB7CiAgbWVtb3J5X2lkOiBzdHJpbmc7CiAgdG9waWNfa2V5OiBzdHJpbmc7CiAgY2F0ZWdvcnk6IHN0cmluZzsKICBsYXRlc3RfY29udGVudDogc3RyaW5nOwogIGxhdGVzdF9jcmVhdGVkX2F0OiBzdHJpbmc7CiAgcnJmX3Njb3JlOiBudW1iZXI7CiAgaGFzX2NoYW5nZXM6IGJvb2xlYW47CiAgdmVyc2lvbl9oaXN0b3J5OiBBcnJheTx7CiAgICBpZDogc3RyaW5nOwogICAgY29udGVudDogc3RyaW5nOwogICAgY3JlYXRlZF9hdDogc3RyaW5nOwogIH0+Owp9Cgpjb25zdCBERUZBVUxUX0dFTkVSQVRJT05fTU9ERUwgPSAiZ2VtaW5pLTIuNS1mbGFzaCI7CmNvbnN0IERFRkFVTFRfRU1CRURESU5HX01PREVMID0gImdlbWluaS1lbWJlZGRpbmctMDAxIjsKCi8qKgogKiBBbmFsaXNhIGEgbWVuc2FnZW0gZGUgZW50cmFkYSAoVGV4dG8gb3UgQXVkaW8gLm9nZyBuYXRpdm8pIGUgY2xhc3NpZmljYSBhIGludGVuY2FvCiAqLwpleHBvcnQgYXN5bmMgZnVuY3Rpb24gYW5hbHl6ZUluY29taW5nTWVzc2FnZSgKICBpbnB1dDoKICAgIHwgeyB0eXBlOiAidGV4dCI7IHRleHQ6IHN0cmluZyB9CiAgICB8IHsgdHlwZTogImF1ZGlvIjsgYmFzZTY0RGF0YTogc3RyaW5nOyBtaW1lVHlwZTogc3RyaW5nIH0sCiAgYXBpS2V5OiBzdHJpbmcsCiAgbW9kZWxOYW1lID0gREVGQVVMVF9HRU5FUkFUSU9OX01PREVMCik6IFByb21pc2U8QW5hbHl6ZWRNZXNzYWdlPiB7CiAgY29uc3Qgc3lzdGVtSW5zdHJ1Y3Rpb24gPSBgVm9jw6ogw6kgdW0gbW90b3IgY2xhc3NpZmljYWRvciBkZSBtZW3Ds3JpYSBwZXNzb2FsIHZpYSBXaGF0c0FwcC4KUmVncmEgZnVuZGFtZW50YWw6IENhZGEgbWVuc2FnZW0gZG8gdXN1w6FyaW8gdHJhdGEgZGUgYXBlbmFzIFVNIGFzc3VudG8uClN1YSB0YXJlZmEgw6k6CjEuIFNlIGEgZW50cmFkYSBmb3Igw6F1ZGlvLCB0cmFuc2NyZXZlciBmaWVsbWVudGUgbyBxdWUgbyB1c3XDoXJpbyBkaXNzZSBlbSBwb3J0dWd1w6pzIG5vIGNhbXBvICJ0cmFuc2NyaXB0aW9uIi4gU2UgZm9yIHRleHRvLCBjb3BpYXIgbyB0ZXh0byBwYXJhICJ0cmFuc2NyaXB0aW9uIi4KMi4gQ2xhc3NpZmljYXIgYSBpbnRlbsOnw6NvICgiaW50ZW50Iik6CiAgIC0gIlNUT1JFIjogcXVhbmRvIG8gdXN1w6FyaW8gZXN0w6EgZW52aWFuZG8gdW1hIGluZm9ybWHDp8Ojbywgbm90YSwgZmF0bywgc2VuaGEsIHZhbG9yLCByZWdyYSwgbGVtYnJldGUgb3UgYXR1YWxpemHDp8OjbyBwYXJhIHNlciBndWFyZGFkYS4KICAgLSAiUVVFUlkiOiBxdWFuZG8gbyB1c3XDoXJpbyBlc3TDoSBmYXplbmRvIHVtYSBwZXJndW50YSBvdSBwZWRpbmRvIHBhcmEgbGVtYnJhciBkZSBhbGdvIHF1ZSBlbGUgZW52aW91IG5vIHBhc3NhZG8uCjMuIEdlcmFyIHVtICJ0b3BpY0tleSIgY3VydG8gZSBwYWRyb25pemFkbyBlbSBrZWJhYi1jYXNlIGlkZW50aWZpY2FuZG8gYSBlbnRpZGFkZSBlIG8gYXRyaWJ1dG8gcHJpbmNpcGFsIChleGVtcGxvOiAib3JjYW1lbnRvLWZvcm5lY2Vkb3Itc2lsdmEiLCAic2VuaGEtYWxhcm1lLWRlcG9zaXRvIiwgInJldW5pYW8tY2xpZW50ZS1hbGZhIikuCjQuIENsYXNzaWZpY2FyICJjYXRlZ29yeSIgZXN0cml0YW1lbnRlIGVtIHVtYSBkYXMgb3DDp8O1ZXM6ICJmYXRvIiwgInJlZ3JhIiwgImdvdGNoYSIsICJkZWNpc2FvIiwgImZpbmFuY2Vpcm8iLCAibGVtYnJldGUiLCAicGVzc29hbCIsICJwcm9qZXRvIi4KNS4gRW0gImNsZWFuRmFjdE9yUXVlcnkiOgogICAtIFNlIGZvciBTVE9SRTogZXNjcmV2YSBhIGFmaXJtYcOnw6NvIGRlIGZvcm1hIGNsYXJhIGUgY29tcGxldGEgbWFudGVuZG8gdG9kb3Mgb3MgbsO6bWVyb3MsIG5vbWVzIGUgZGV0YWxoZXMuCiAgIC0gU2UgZm9yIFFVRVJZOiBlc2NyZXZhIG9zIHRlcm1vcy1jaGF2ZSBwcmluY2lwYWlzIHBhcmEgY29uc3VsdGEgbm8gYmFuY28gZGUgZGFkb3MuCjYuIEVtICJzaG9ydFN0b3JlQWNrIjogZXNjb2xoYSB1bWEgY29uZmlybWHDp8OjbyBleHRyZW1hbWVudGUgY3VydGEsIG5hdHVyYWwgZSBpbmZvcm1hbCBlbSBwb3J0dWd1w6pzLCB2YXJpYW5kbyBlbnRyZSBmcmFzZXMgY29tbzoKICAgLSAiT2ssIGdyYXZlaSBpc3NvISIKICAgLSAiTWVtw7NyaWEgZ3VhcmRhZGEhIgogICAtICJCbHosIGd1YXJkZWkgaXNzbyB0YW1iw6ltIgogICAtICJBbm90YWRvLCBndWFyZGVpIGFxdWkhImA7CgogIGNvbnN0IHVzZXJQYXJ0cyA9CiAgICBpbnB1dC50eXBlID09PSAidGV4dCIKICAgICAgPyBbeyB0ZXh0OiBpbnB1dC50ZXh0IH1dCiAgICAgIDogWwogICAgICAgICAgewogICAgICAgICAgICBpbmxpbmVEYXRhOiB7CiAgICAgICAgICAgICAgbWltZVR5cGU6IGlucHV0Lm1pbWVUeXBlLAogICAgICAgICAgICAgIGRhdGE6IGlucHV0LmJhc2U2NERhdGEsCiAgICAgICAgICAgIH0sCiAgICAgICAgICB9LAogICAgICAgICAgewogICAgICAgICAgICB0ZXh0OiAiVHJhbnNjcmV2YSBlc3RlIMOhdWRpbyBlIGV4dHJhaWEgb3MgbWV0YWRhZG9zIGVzdHJ1dHVyYWRvcyBjb25mb3JtZSBhcyBpbnN0cnXDp8O1ZXMuIiwKICAgICAgICAgIH0sCiAgICAgICAgXTsKCiAgY29uc3QgcmVzcG9uc2UgPSBhd2FpdCBmZXRjaCgKICAgIGBodHRwczovL2dlbmVyYXRpdmVsYW5ndWFnZS5nb29nbGVhcGlzLmNvbS92MWJldGEvbW9kZWxzLyR7bW9kZWxOYW1lfTpnZW5lcmF0ZUNvbnRlbnQ/a2V5PSR7YXBpS2V5fWAsCiAgICB7CiAgICAgIG1ldGhvZDogIlBPU1QiLAogICAgICBoZWFkZXJzOiB7ICJDb250ZW50LVR5cGUiOiAiYXBwbGljYXRpb24vanNvbiIgfSwKICAgICAgYm9keTogSlNPTi5zdHJpbmdpZnkoewogICAgICAgIHN5c3RlbUluc3RydWN0aW9uOiB7CiAgICAgICAgICBwYXJ0czogW3sgdGV4dDogc3lzdGVtSW5zdHJ1Y3Rpb24gfV0sCiAgICAgICAgfSwKICAgICAgICBjb250ZW50czogWwogICAgICAgICAgewogICAgICAgICAgICByb2xlOiAidXNlciIsCiAgICAgICAgICAgIHBhcnRzOiB1c2VyUGFydHMsCiAgICAgICAgICB9LAogICAgICAgIF0sCiAgICAgICAgZ2VuZXJhdGlvbkNvbmZpZzogewogICAgICAgICAgdGVtcGVyYXR1cmU6IDAuMSwKICAgICAgICAgIHJlc3BvbnNlTWltZVR5cGU6ICJhcHBsaWNhdGlvbi9qc29uIiwKICAgICAgICAgIHJlc3BvbnNlU2NoZW1hOiB7CiAgICAgICAgICAgIHR5cGU6ICJPQkpFQ1QiLAogICAgICAgICAgICBwcm9wZXJ0aWVzOiB7CiAgICAgICAgICAgICAgaW50ZW50OiB7CiAgICAgICAgICAgICAgICB0eXBlOiAiU1RSSU5HIiwKICAgICAgICAgICAgICAgIGVudW06IFsiU1RPUkUiLCAiUVVFUlkiXSwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIHRyYW5zY3JpcHRpb246IHsgdHlwZTogIlNUUklORyIgfSwKICAgICAgICAgICAgICB0b3BpY0tleTogeyB0eXBlOiAiU1RSSU5HIiB9LAogICAgICAgICAgICAgIGNhdGVnb3J5OiB7CiAgICAgICAgICAgICAgICB0eXBlOiAiU1RSSU5HIiwKICAgICAgICAgICAgICAgIGVudW06IFsKICAgICAgICAgICAgICAgICAgImZhdG8iLAogICAgICAgICAgICAgICAgICAicmVncmEiLAogICAgICAgICAgICAgICAgICAiZ290Y2hhIiwKICAgICAgICAgICAgICAgICAgImRlY2lzYW8iLAogICAgICAgICAgICAgICAgICAiZmluYW5jZWlybyIsCiAgICAgICAgICAgICAgICAgICJsZW1icmV0ZSIsCiAgICAgICAgICAgICAgICAgICJwZXNzb2FsIiwKICAgICAgICAgICAgICAgICAgInByb2pldG8iLAogICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgIGNsZWFuRmFjdE9yUXVlcnk6IHsgdHlwZTogIlNUUklORyIgfSwKICAgICAgICAgICAgICBzaG9ydFN0b3JlQWNrOiB7IHR5cGU6ICJTVFJJTkciIH0sCiAgICAgICAgICAgIH0sCiAgICAgICAgICAgIHJlcXVpcmVkOiBbCiAgICAgICAgICAgICAgImludGVudCIsCiAgICAgICAgICAgICAgInRyYW5zY3JpcHRpb24iLAogICAgICAgICAgICAgICJ0b3BpY0tleSIsCiAgICAgICAgICAgICAgImNhdGVnb3J5IiwKICAgICAgICAgICAgICAiY2xlYW5GYWN0T3JRdWVyeSIsCiAgICAgICAgICAgICAgInNob3J0U3RvcmVBY2siLAogICAgICAgICAgICBdLAogICAgICAgICAgfSwKICAgICAgICB9LAogICAgICB9KSwKICAgIH0KICApOwoKICBpZiAoIXJlc3BvbnNlLm9rKSB7CiAgICBjb25zdCBlcnJUZXh0ID0gYXdhaXQgcmVzcG9uc2UudGV4dCgpOwogICAgdGhyb3cgbmV3IEVycm9yKAogICAgICBgRXJybyBuYSBjaGFtYWRhIEdlbWluaSBhbmFseXplSW5jb21pbmdNZXNzYWdlICgke3Jlc3BvbnNlLnN0YXR1c30pOiAke2VyclRleHR9YAogICAgKTsKICB9CgogIGNvbnN0IGRhdGEgPSBhd2FpdCByZXNwb25zZS5qc29uKCk7CiAgY29uc3QgcmF3SnNvbiA9IGRhdGE/LmNhbmRpZGF0ZXM/LlswXT8uY29udGVudD8ucGFydHM/LlswXT8udGV4dDsKICBpZiAoIXJhd0pzb24pIHsKICAgIHRocm93IG5ldyBFcnJvcigiUmVzcG9zdGEgdmF6aWEgZG8gbW9kZWxvIEdlbWluaSBhbyBhbmFsaXNhciBtZW5zYWdlbS4iKTsKICB9CgogIHJldHVybiBKU09OLnBhcnNlKHJhd0pzb24pIGFzIEFuYWx5emVkTWVzc2FnZTsKfQoKLyoqCiAqIEdlcmEgbyB2ZXRvciBkZSBlbWJlZGRpbmcgZGUgNzY4IGRpbWVuc29lcyB1c2FuZG8gdGV4dC1lbWJlZGRpbmctMDA0CiAqLwpleHBvcnQgYXN5bmMgZnVuY3Rpb24gZ2VuZXJhdGVFbWJlZGRpbmcoCiAgdGV4dDogc3RyaW5nLAogIGFwaUtleTogc3RyaW5nLAogIGVtYmVkZGluZ01vZGVsID0gREVGQVVMVF9FTUJFRERJTkdfTU9ERUwKKTogUHJvbWlzZTxudW1iZXJbXT4gewogIGNvbnN0IHJlc3BvbnNlID0gYXdhaXQgZmV0Y2goCiAgICBgaHR0cHM6Ly9nZW5lcmF0aXZlbGFuZ3VhZ2UuZ29vZ2xlYXBpcy5jb20vdjFiZXRhL21vZGVscy8ke2VtYmVkZGluZ01vZGVsfTplbWJlZENvbnRlbnQ/a2V5PSR7YXBpS2V5fWAsCiAgICB7CiAgICAgIG1ldGhvZDogIlBPU1QiLAogICAgICBoZWFkZXJzOiB7ICJDb250ZW50LVR5cGUiOiAiYXBwbGljYXRpb24vanNvbiIgfSwKICAgICAgYm9keTogSlNPTi5zdHJpbmdpZnkoewogICAgICAgIG1vZGVsOiBgbW9kZWxzLyR7ZW1iZWRkaW5nTW9kZWx9YCwKICAgICAgICBjb250ZW50OiB7CiAgICAgICAgICBwYXJ0czogW3sgdGV4dCB9XSwKICAgICAgICB9LAogICAgICAgIG91dHB1dERpbWVuc2lvbmFsaXR5OiA3NjgsCiAgICAgIH0pLAogICAgfQogICk7CgogIGlmICghcmVzcG9uc2Uub2spIHsKICAgIGNvbnN0IGVyclRleHQgPSBhd2FpdCByZXNwb25zZS50ZXh0KCk7CiAgICB0aHJvdyBuZXcgRXJyb3IoCiAgICAgIGBFcnJvIGFvIGdlcmFyIGVtYmVkZGluZyAoJHtyZXNwb25zZS5zdGF0dXN9KTogJHtlcnJUZXh0fWAKICAgICk7CiAgfQoKICBjb25zdCBkYXRhID0gYXdhaXQgcmVzcG9uc2UuanNvbigpOwogIGNvbnN0IHZhbHVlcyA9IGRhdGE/LmVtYmVkZGluZz8udmFsdWVzOwogIGlmICghQXJyYXkuaXNBcnJheSh2YWx1ZXMpIHx8IHZhbHVlcy5sZW5ndGggPT09IDApIHsKICAgIHRocm93IG5ldyBFcnJvcigiVmV0b3IgZGUgZW1iZWRkaW5nIGludmFsaWRvIHJldG9ybmFkbyBwZWxhIEFQSS4iKTsKICB9CgogIHJldHVybiB2YWx1ZXM7Cn0KCi8qKgogKiBWZXJpZmljYSBzZSBhIG5vdmEgaW5mb3JtYWNhbyBlbnZpYWRhIHBlbG8gdXN1YXJpbyBhdHVhbGl6YS9zdWJzdGl0dWkKICogYWxndW1hIG1lbW9yaWEgYXRpdmEgamEgZXhpc3RlbnRlIHNvYnJlIG8gbWVzbW8gYXNzdW50by4KICovCmV4cG9ydCBhc3luYyBmdW5jdGlvbiBjaGVja1RvcGljRXZvbHV0aW9uKAogIG5ld0ZhY3Q6IHN0cmluZywKICBuZXdUb3BpY0tleTogc3RyaW5nLAogIGNhbmRpZGF0ZXM6IENhbmRpZGF0ZU1lbW9yeVtdLAogIGFwaUtleTogc3RyaW5nLAogIG1vZGVsTmFtZSA9IERFRkFVTFRfR0VORVJBVElPTl9NT0RFTAopOiBQcm9taXNlPHsgc3VwZXJzZWRlc0lkOiBzdHJpbmcgfCBudWxsIH0+IHsKICBpZiAoIWNhbmRpZGF0ZXMgfHwgY2FuZGlkYXRlcy5sZW5ndGggPT09IDApIHsKICAgIHJldHVybiB7IHN1cGVyc2VkZXNJZDogbnVsbCB9OwogIH0KCiAgY29uc3QgcHJvbXB0ID0gYEF2YWxpZSBzZSBhIE5PVkEgSU5GT1JNQcOHw4NPIGVudmlhZGEgcGVsbyB1c3XDoXJpbyBhdHVhbGl6YSwgY29ycmlnZSBvdSBzdWJzdGl0dWkgYWxndW1hIGRhcyBNRU3Dk1JJQVMgQVRJVkFTIGxpc3RhZGFzIGFiYWl4byAocG9yIGV4ZW1wbG86IG11ZGFuw6dhIGRlIHZhbG9yLCBtdWRhbsOnYSBkZSBkYXRhLCBtdWRhbsOnYSBkZSBzZW5oYSwgYXR1YWxpemHDp8OjbyBkZSBzdGF0dXMgZG8gbWVzbW8gYXNzdW50bykuClNlIGVsYSBmb3IgdW1hIGF0dWFsaXphw6fDo28gZG8gbWVzbW8gYXNzdW50byBkZSB1bWEgbWVtw7NyaWEgZXhpc3RlbnRlLCByZXRvcm5lIG8gImlkIiBleGF0byBkZXNzYSBtZW3Ds3JpYSBlbSAic3VwZXJzZWRlc0lkIi4KU2UgZm9yIHVtIGFzc3VudG8gZGlmZXJlbnRlIG91IHVtIGZhdG8gcXVlIG7Do28gc3Vic3RpdHVpIG5lbmh1bSBkb3MgY2FuZGlkYXRvcywgcmV0b3JuZSBudWxsIGVtICJzdXBlcnNlZGVzSWQiLgoKTk9WQSBJTkZPUk1Bw4fDg086Ci0gVMOzcGljbzogJHtuZXdUb3BpY0tleX0KLSBDb250ZcO6ZG86ICR7bmV3RmFjdH0KCk1FTcOTUklBUyBBVElWQVMgQ0FORElEQVRBUzoKJHtKU09OLnN0cmluZ2lmeShjYW5kaWRhdGVzLCBudWxsLCAyKX1gOwoKICBjb25zdCByZXNwb25zZSA9IGF3YWl0IGZldGNoKAogICAgYGh0dHBzOi8vZ2VuZXJhdGl2ZWxhbmd1YWdlLmdvb2dsZWFwaXMuY29tL3YxYmV0YS9tb2RlbHMvJHttb2RlbE5hbWV9OmdlbmVyYXRlQ29udGVudD9rZXk9JHthcGlLZXl9YCwKICAgIHsKICAgICAgbWV0aG9kOiAiUE9TVCIsCiAgICAgIGhlYWRlcnM6IHsgIkNvbnRlbnQtVHlwZSI6ICJhcHBsaWNhdGlvbi9qc29uIiB9LAogICAgICBib2R5OiBKU09OLnN0cmluZ2lmeSh7CiAgICAgICAgY29udGVudHM6IFt7IHJvbGU6ICJ1c2VyIiwgcGFydHM6IFt7IHRleHQ6IHByb21wdCB9XSB9XSwKICAgICAgICBnZW5lcmF0aW9uQ29uZmlnOiB7CiAgICAgICAgICB0ZW1wZXJhdHVyZTogMC4wLAogICAgICAgICAgcmVzcG9uc2VNaW1lVHlwZTogImFwcGxpY2F0aW9uL2pzb24iLAogICAgICAgICAgcmVzcG9uc2VTY2hlbWE6IHsKICAgICAgICAgICAgdHlwZTogIk9CSkVDVCIsCiAgICAgICAgICAgIHByb3BlcnRpZXM6IHsKICAgICAgICAgICAgICBzdXBlcnNlZGVzSWQ6IHsKICAgICAgICAgICAgICAgIHR5cGU6ICJTVFJJTkciLAogICAgICAgICAgICAgICAgbnVsbGFibGU6IHRydWUsCiAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgfSwKICAgICAgICAgIH0sCiAgICAgICAgfSwKICAgICAgfSksCiAgICB9CiAgKTsKCiAgaWYgKCFyZXNwb25zZS5vaykgewogICAgcmV0dXJuIHsgc3VwZXJzZWRlc0lkOiBudWxsIH07CiAgfQoKICBjb25zdCBkYXRhID0gYXdhaXQgcmVzcG9uc2UuanNvbigpOwogIGNvbnN0IHJhd0pzb24gPSBkYXRhPy5jYW5kaWRhdGVzPy5bMF0/LmNvbnRlbnQ/LnBhcnRzPy5bMF0/LnRleHQ7CiAgaWYgKCFyYXdKc29uKSB7CiAgICByZXR1cm4geyBzdXBlcnNlZGVzSWQ6IG51bGwgfTsKICB9CgogIGNvbnN0IHBhcnNlZCA9IEpTT04ucGFyc2UocmF3SnNvbikgYXMgeyBzdXBlcnNlZGVzSWQ/OiBzdHJpbmcgfCBudWxsIH07CiAgY29uc3QgdmFsaWRJZCA9IGNhbmRpZGF0ZXMuZmluZCgoYykgPT4gYy5pZCA9PT0gcGFyc2VkLnN1cGVyc2VkZXNJZCk/LmlkOwogIHJldHVybiB7IHN1cGVyc2VkZXNJZDogdmFsaWRJZCA/PyBudWxsIH07Cn0KCi8qKgogKiBGb3JtYXRhIGEgcmVzcG9zdGEgZGUgdW1hIGNvbnN1bHRhIChRVUVSWSkgZGUgZm9ybWEgZXh0cmVtYW1lbnRlIGRpcmV0YSwgY3VydGEgZSBpbmZvcm1hbCwKICogY2l0YW5kbyBxdWFuZG8gbyB1c3VhcmlvIGZhbG91IGFxdWlsbyBlIGluZGljYW5kbyBzZSBob3V2ZSBhbHRlcmFjb2VzIGFvIGxvbmdvIGRvIHRlbXBvLgogKi8KZXhwb3J0IGFzeW5jIGZ1bmN0aW9uIGZvcm1hdENvbnZlcnNhdGlvbmFsUXVlcnlBbnN3ZXIoCiAgdXNlclF1ZXN0aW9uOiBzdHJpbmcsCiAgbWVtb3JpZXM6IFJldHJpZXZlZE1lbW9yeVdpdGhIaXN0b3J5W10sCiAgbm93SXNvOiBzdHJpbmcsCiAgYXBpS2V5OiBzdHJpbmcsCiAgbW9kZWxOYW1lID0gREVGQVVMVF9HRU5FUkFUSU9OX01PREVMCik6IFByb21pc2U8c3RyaW5nPiB7CiAgaWYgKCFtZW1vcmllcyB8fCBtZW1vcmllcy5sZW5ndGggPT09IDApIHsKICAgIHJldHVybiAiRGVpIHVtYSBvbGhhZGEgYXF1aSBlIHZvY8OqIGFpbmRhIG7Do28gbWUgbWFuZG91IG5hZGEgc29icmUgaXNzby4iOwogIH0KCiAgY29uc3Qgc3lzdGVtSW5zdHJ1Y3Rpb24gPSBgVm9jw6ogw6kgbyBhZ2VudGUgcGVzc29hbCBkZSBtZW3Ds3JpYSBkbyB1c3XDoXJpbyBubyBXaGF0c0FwcC4KUmVncmFzIG9icmlnYXTDs3JpYXMgZGUgZXN0aWxvIGRlIHJlc3Bvc3RhOgoxLiBSZXNwb25kYSBTRU1QUkUgZW0gdGV4dG8gY3VydG8sIGRpcmV0byBlIHRvdGFsbWVudGUgaW5mb3JtYWwgKGNvbW8gdW0gYW1pZ28gcmVzcG9uZGVuZG8gcsOhcGlkbyBubyBXaGF0c0FwcCwgc2VtIHTDrXR1bG9zLCBzZW0gbGlzdGFzIGZvcm1haXMgZSBzZW0gZW1vamlzKS4KMi4gSW5mb3JtZSBzZW1wcmUgYSDDumx0aW1hIGluZm9ybWHDp8OjbyBzYWx2YSBubyBiYW5jbyBkZSBkYWRvcyBtZW5jaW9uYW5kbyBxdWFuZG8gbyB1c3XDoXJpbyBkaXNzZSBhcXVpbG8gZGUgZm9ybWEgbmF0dXJhbC4gVXNlIGV4ZW1wbG9zIGV4YXRhbWVudGUgbmVzdGUgZXN0aWxvOgogICAtICJObyBkaWEgZGQvbW0vYWFhYSB2b2PDqiBkaXNzZSBxdWUuLi4iCiAgIC0gIk5vIG3DqnMgZGUgW23DqnNdIHZvY8OqIG1lIGZhbG91IHF1ZS4uLiIKICAgLSAiSMOhIHVucyBYIGRpYXMgYXRyw6FzIHZvY8OqIG1lIGRpc3NlIHF1ZS4uLiIKICAgLSAiRGlhIGRkIHZvY8OqIG1lIGRpc3NlIHF1ZS4uLiIKMy4gU2UgbyBjYW1wbyAiaGFzX2NoYW5nZXMiIGZvciB0cnVlIChvdSBzZWphLCBleGlzdGVtIHJlZ2lzdHJvcyBlbSAidmVyc2lvbl9oaXN0b3J5IiksIHZvY8OqIERFVkUgaW5kaWNhciBhIMO6bHRpbWEgaW5mb3JtYcOnw6NvIHF1ZSBlc3TDoSB2YWxlbmRvIGFnb3JhIEUgbWVuY2lvbmFyIGRlIGZvcm1hIG5hdHVyYWwgcXVlIGVsYSB0ZXZlIGFsdGVyYcOnw6NvIGFvIGxvbmdvIGRvIHRlbXBvIChkaXplbmRvIG8gcXVlIHZvY8OqIHRpbmhhIGZhbGFkbyBhbnRlcyBlIGVtIHF1YWwgZGF0YSkuCiAgIEV4ZW1wbG8gY29tIGFsdGVyYcOnw6NvOiAiTm8gZGlhIDE2LzEwLzIwMjYgdm9jw6ogbWUgZGlzc2UgcXVlIG8gb3LDp2FtZW50byBmZWNob3UgZW0gMTUgbWlsLiBBbnRlcyBkaXNzbywgbm8gZGlhIDEwLzEwLzIwMjYsIHZvY8OqIHRpbmhhIG1lIGZhbGFkbyBxdWUgZXJhIDEyIG1pbC4iCjQuIE51bmNhIGludmVudGUgaW5mb3JtYcOnw7VlcyBxdWUgbsOjbyBlc3RlamFtIG5vcyByZWdpc3Ryb3MgZm9ybmVjaWRvcy4gU2UgbmVuaHVtIGRvcyByZWdpc3Ryb3MgYWJhaXhvIHJlc3BvbmRlciDDoCBwZXJndW50YSBkbyB1c3XDoXJpbywgZGlnYSBhcGVuYXM6ICJQcm9jdXJlaSBhcXVpIGUgdm9jw6ogYWluZGEgbsOjbyBtZSBmYWxvdSBuYWRhIHNvYnJlIGlzc28uImA7CgogIGNvbnN0IHVzZXJQcm9tcHQgPSBgRGF0YS9Ib3JhIEF0dWFsIGRlIFJlZmVyw6puY2lhIChCcmFzw61saWEpOiAke25vd0lzb30KUGVyZ3VudGEgZG8gVXN1w6FyaW86ICIke3VzZXJRdWVzdGlvbn0iCgpSZWdpc3Ryb3MgRW5jb250cmFkb3Mgbm8gQmFuY28gZGUgTWVtw7NyaWEgKG9yZGVuYWRvcyBwb3IgcmVsZXbDom5jaWEpOgoke0pTT04uc3RyaW5naWZ5KG1lbW9yaWVzLCBudWxsLCAyKX1gOwoKICBjb25zdCByZXNwb25zZSA9IGF3YWl0IGZldGNoKAogICAgYGh0dHBzOi8vZ2VuZXJhdGl2ZWxhbmd1YWdlLmdvb2dsZWFwaXMuY29tL3YxYmV0YS9tb2RlbHMvJHttb2RlbE5hbWV9OmdlbmVyYXRlQ29udGVudD9rZXk9JHthcGlLZXl9YCwKICAgIHsKICAgICAgbWV0aG9kOiAiUE9TVCIsCiAgICAgIGhlYWRlcnM6IHsgIkNvbnRlbnQtVHlwZSI6ICJhcHBsaWNhdGlvbi9qc29uIiB9LAogICAgICBib2R5OiBKU09OLnN0cmluZ2lmeSh7CiAgICAgICAgc3lzdGVtSW5zdHJ1Y3Rpb246IHsKICAgICAgICAgIHBhcnRzOiBbeyB0ZXh0OiBzeXN0ZW1JbnN0cnVjdGlvbiB9XSwKICAgICAgICB9LAogICAgICAgIGNvbnRlbnRzOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgIHJvbGU6ICJ1c2VyIiwKICAgICAgICAgICAgcGFydHM6IFt7IHRleHQ6IHVzZXJQcm9tcHQgfV0sCiAgICAgICAgICB9LAogICAgICAgIF0sCiAgICAgICAgZ2VuZXJhdGlvbkNvbmZpZzogewogICAgICAgICAgdGVtcGVyYXR1cmU6IDAuMiwKICAgICAgICB9LAogICAgICB9KSwKICAgIH0KICApOwoKICBpZiAoIXJlc3BvbnNlLm9rKSB7CiAgICBjb25zdCBlcnJUZXh0ID0gYXdhaXQgcmVzcG9uc2UudGV4dCgpOwogICAgdGhyb3cgbmV3IEVycm9yKAogICAgICBgRXJybyBhbyBmb3JtYXRhciByZXNwb3N0YSBkZSBjb25zdWx0YSAoJHtyZXNwb25zZS5zdGF0dXN9KTogJHtlcnJUZXh0fWAKICAgICk7CiAgfQoKICBjb25zdCBkYXRhID0gYXdhaXQgcmVzcG9uc2UuanNvbigpOwogIGNvbnN0IHJlcGx5ID0gZGF0YT8uY2FuZGlkYXRlcz8uWzBdPy5jb250ZW50Py5wYXJ0cz8uWzBdPy50ZXh0Py50cmltKCk7CiAgcmV0dXJuIHJlcGx5IHx8ICJQcm9jdXJlaSBhcXVpIGUgbsOjbyBlbmNvbnRyZWkgbmFkYSBzYWx2byBzb2JyZSBpc3NvLiI7Cn0K
+/**
+ * Modulo de Inteligencia Artificial com Google Gemini API
+ * Processa texto e audio nativamente, gera embeddings de 768 dimensoes,
+ * avalia atualizacoes de versao no tempo e formata respostas curtas e diretas.
+ */
+
+export type MemoryCategory =
+  | "fato"
+  | "regra"
+  | "gotcha"
+  | "decisao"
+  | "financeiro"
+  | "lembrete"
+  | "pessoal"
+  | "projeto";
+
+export interface AnalyzedMessage {
+  intent: "STORE" | "QUERY";
+  transcription: string;
+  topicKey: string;
+  category: MemoryCategory;
+  cleanFactOrQuery: string;
+  shortStoreAck: string;
+}
+
+export interface CandidateMemory {
+  id: string;
+  topic_key: string;
+  category: string;
+  content: string;
+  similarity: number;
+  created_at: string;
+}
+
+export interface RetrievedMemoryWithHistory {
+  memory_id: string;
+  topic_key: string;
+  category: string;
+  latest_content: string;
+  latest_created_at: string;
+  rrf_score: number;
+  has_changes: boolean;
+  version_history: Array<{
+    id: string;
+    content: string;
+    created_at: string;
+  }>;
+}
+
+const DEFAULT_GENERATION_MODEL = "gemini-2.5-flash";
+const DEFAULT_EMBEDDING_MODEL = "gemini-embedding-001";
+
+/**
+ * Analisa a mensagem de entrada (Texto ou Audio .ogg nativo) e classifica a intencao
+ */
+export async function analyzeIncomingMessage(
+  input:
+    | { type: "text"; text: string }
+    | { type: "audio"; base64Data: string; mimeType: string },
+  apiKey: string,
+  modelName = DEFAULT_GENERATION_MODEL
+): Promise<AnalyzedMessage> {
+  const systemInstruction = `Você é um motor classificador de memória pessoal via WhatsApp.
+Regra fundamental: Cada mensagem do usuário trata de apenas UM assunto.
+Sua tarefa é:
+1. Se a entrada for áudio, transcrever fielmente o que o usuário disse em português no campo "transcription". Se for texto, copiar o texto para "transcription".
+2. Classificar a intenção ("intent"):
+   - "STORE": quando o usuário está enviando uma informação, nota, fato, senha, valor, regra, lembrete ou atualização para ser guardada.
+   - "QUERY": quando o usuário está fazendo uma pergunta ou pedindo para lembrar de algo que ele enviou no passado.
+3. Gerar um "topicKey" curto e padronizado em kebab-case identificando a entidade e o atributo principal (exemplo: "orcamento-fornecedor-silva", "senha-alarme-deposito", "reuniao-cliente-alfa").
+4. Classificar "category" estritamente em uma das opções: "fato", "regra", "gotcha", "decisao", "financeiro", "lembrete", "pessoal", "projeto".
+5. Em "cleanFactOrQuery":
+   - Se for STORE: escreva a afirmação de forma clara e completa mantendo todos os números, nomes e detalhes.
+   - Se for QUERY: escreva os termos-chave principais para consulta no banco de dados.
+6. Em "shortStoreAck": escolha uma confirmação extremamente curta, natural e informal em português, variando entre frases como:
+   - "Ok, gravei isso!"
+   - "Memória guardada!"
+   - "Blz, guardei isso também"
+   - "Anotado, guardei aqui!"`;
+
+  const userParts =
+    input.type === "text"
+      ? [{ text: input.text }]
+      : [
+          {
+            inlineData: {
+              mimeType: input.mimeType,
+              data: input.base64Data,
+            },
+          },
+          {
+            text: "Transcreva este áudio e extraia os metadados estruturados conforme as instruções.",
+          },
+        ];
+
+  const response = await fetch(
+    `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        systemInstruction: {
+          parts: [{ text: systemInstruction }],
+        },
+        contents: [
+          {
+            role: "user",
+            parts: userParts,
+          },
+        ],
+        generationConfig: {
+          temperature: 0.1,
+          responseMimeType: "application/json",
+          responseSchema: {
+            type: "OBJECT",
+            properties: {
+              intent: {
+                type: "STRING",
+                enum: ["STORE", "QUERY"],
+              },
+              transcription: { type: "STRING" },
+              topicKey: { type: "STRING" },
+              category: {
+                type: "STRING",
+                enum: [
+                  "fato",
+                  "regra",
+                  "gotcha",
+                  "decisao",
+                  "financeiro",
+                  "lembrete",
+                  "pessoal",
+                  "projeto",
+                ],
+              },
+              cleanFactOrQuery: { type: "STRING" },
+              shortStoreAck: { type: "STRING" },
+            },
+            required: [
+              "intent",
+              "transcription",
+              "topicKey",
+              "category",
+              "cleanFactOrQuery",
+              "shortStoreAck",
+            ],
+          },
+        },
+      }),
+    }
+  );
+
+  if (!response.ok) {
+    const errText = await response.text();
+    throw new Error(
+      `Erro na chamada Gemini analyzeIncomingMessage (${response.status}): ${errText}`
+    );
+  }
+
+  const data = await response.json();
+  const rawJson = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+  if (!rawJson) {
+    throw new Error("Resposta vazia do modelo Gemini ao analisar mensagem.");
+  }
+
+  return JSON.parse(rawJson) as AnalyzedMessage;
+}
+
+/**
+ * Gera o vetor de embedding de 768 dimensoes usando text-embedding-004
+ */
+export async function generateEmbedding(
+  text: string,
+  apiKey: string,
+  embeddingModel = DEFAULT_EMBEDDING_MODEL
+): Promise<number[]> {
+  const response = await fetch(
+    `https://generativelanguage.googleapis.com/v1beta/models/${embeddingModel}:embedContent?key=${apiKey}`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        model: `models/${embeddingModel}`,
+        content: {
+          parts: [{ text }],
+        },
+        outputDimensionality: 768,
+      }),
+    }
+  );
+
+  if (!response.ok) {
+    const errText = await response.text();
+    throw new Error(
+      `Erro ao gerar embedding (${response.status}): ${errText}`
+    );
+  }
+
+  const data = await response.json();
+  const values = data?.embedding?.values;
+  if (!Array.isArray(values) || values.length === 0) {
+    throw new Error("Vetor de embedding invalido retornado pela API.");
+  }
+
+  return values;
+}
+
+/**
+ * Verifica se a nova informacao enviada pelo usuario atualiza/substitui
+ * alguma memoria ativa ja existente sobre o mesmo assunto.
+ */
+export async function checkTopicEvolution(
+  newFact: string,
+  newTopicKey: string,
+  candidates: CandidateMemory[],
+  apiKey: string,
+  modelName = DEFAULT_GENERATION_MODEL
+): Promise<{ supersedesId: string | null }> {
+  if (!candidates || candidates.length === 0) {
+    return { supersedesId: null };
+  }
+
+  const prompt = `Avalie se a NOVA INFORMAÇÃO enviada pelo usuário atualiza, corrige ou substitui alguma das MEMÓRIAS ATIVAS listadas abaixo (por exemplo: mudança de valor, mudança de data, mudança de senha, atualização de status do mesmo assunto).
+Se ela for uma atualização do mesmo assunto de uma memória existente, retorne o "id" exato dessa memória em "supersedesId".
+Se for um assunto diferente ou um fato que não substitui nenhum dos candidatos, retorne null em "supersedesId".
+
+NOVA INFORMAÇÃO:
+- Tópico: ${newTopicKey}
+- Conteúdo: ${newFact}
+
+MEMÓRIAS ATIVAS CANDIDATAS:
+${JSON.stringify(candidates, null, 2)}`;
+
+  const response = await fetch(
+    `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        contents: [{ role: "user", parts: [{ text: prompt }] }],
+        generationConfig: {
+          temperature: 0.0,
+          responseMimeType: "application/json",
+          responseSchema: {
+            type: "OBJECT",
+            properties: {
+              supersedesId: {
+                type: "STRING",
+                nullable: true,
+              },
+            },
+          },
+        },
+      }),
+    }
+  );
+
+  if (!response.ok) {
+    return { supersedesId: null };
+  }
+
+  const data = await response.json();
+  const rawJson = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+  if (!rawJson) {
+    return { supersedesId: null };
+  }
+
+  const parsed = JSON.parse(rawJson) as { supersedesId?: string | null };
+  const validId = candidates.find((c) => c.id === parsed.supersedesId)?.id;
+  return { supersedesId: validId ?? null };
+}
+
+/**
+ * Formata a resposta de uma consulta (QUERY) de forma extremamente direta, curta e informal,
+ * citando quando o usuario falou aquilo e indicando se houve alteracoes ao longo do tempo.
+ */
+export async function formatConversationalQueryAnswer(
+  userQuestion: string,
+  memories: RetrievedMemoryWithHistory[],
+  nowIso: string,
+  apiKey: string,
+  modelName = DEFAULT_GENERATION_MODEL
+): Promise<string> {
+  if (!memories || memories.length === 0) {
+    return "Dei uma olhada aqui e você ainda não me mandou nada sobre isso.";
+  }
+
+  const systemInstruction = `Você é o agente pessoal de memória do usuário no WhatsApp.
+Regras obrigatórias de estilo de resposta:
+1. Responda SEMPRE em texto curto, direto e totalmente informal (como um amigo respondendo rápido no WhatsApp, sem títulos, sem listas formais e sem emojis).
+2. Informe sempre a última informação salva no banco de dados mencionando quando o usuário disse aquilo de forma natural. Use exemplos exatamente neste estilo:
+   - "No dia dd/mm/aaaa você disse que..."
+   - "No mês de [mês] você me falou que..."
+   - "Há uns X dias atrás você me disse que..."
+   - "Dia dd você me disse que..."
+3. Se o campo "has_changes" for true (ou seja, existem registros em "version_history"), você DEVE indicar a última informação que está valendo agora E mencionar de forma natural que ela teve alteração ao longo do tempo (dizendo o que você tinha falado antes e em qual data).
+   Exemplo com alteração: "No dia 16/10/2026 você me disse que o orçamento fechou em 15 mil. Antes disso, no dia 10/10/2026, você tinha me falado que era 12 mil."
+4. Nunca invente informações que não estejam nos registros fornecidos. Se nenhum dos registros abaixo responder à pergunta do usuário, diga apenas: "Procurei aqui e você ainda não me falou nada sobre isso."`;
+
+  const userPrompt = `Data/Hora Atual de Referência (Brasília): ${nowIso}
+Pergunta do Usuário: "${userQuestion}"
+
+Registros Encontrados no Banco de Memória (ordenados por relevância):
+${JSON.stringify(memories, null, 2)}`;
+
+  const response = await fetch(
+    `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        systemInstruction: {
+          parts: [{ text: systemInstruction }],
+        },
+        contents: [
+          {
+            role: "user",
+            parts: [{ text: userPrompt }],
+          },
+        ],
+        generationConfig: {
+          temperature: 0.2,
+        },
+      }),
+    }
+  );
+
+  if (!response.ok) {
+    const errText = await response.text();
+    throw new Error(
+      `Erro ao formatar resposta de consulta (${response.status}): ${errText}`
+    );
+  }
+
+  const data = await response.json();
+  const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim();
+  return reply || "Procurei aqui e não encontrei nada salvo sobre isso.";
+}

@@ -1,1 +1,6 @@
-bm9kZV9tb2R1bGVzLwoudGVtcC8KYmluLwoqLnppcAoqLmxvZwouZW52Cg==
+node_modules/
+.temp/
+bin/
+*.zip
+*.log
+.env

@@ -1,1 +1,141 @@
-LyoqCiAqIENsaWVudGUgcGFyYSBhIFdoYXRzQXBwIENsb3VkIEFQSSAoTWV0YSBHcmFwaCBBUEkgdjIxLjApCiAqIFJlc3BvbnNhdmVsIHBvciBiYWl4YXIgbWlkaWFzIGRlIGF1ZGlvICgub2dnKSBlIGVudmlhciByZXNwb3N0YXMgZGUgdGV4dG8uCiAqLwoKZXhwb3J0IGludGVyZmFjZSBXaGF0c0FwcENvbmZpZyB7CiAgYWNjZXNzVG9rZW46IHN0cmluZzsKICBwaG9uZU51bWJlcklkOiBzdHJpbmc7Cn0KCi8qKgogKiBDb252ZXJ0ZSB1bSBBcnJheUJ1ZmZlciBlbSBzdHJpbmcgQmFzZTY0IHBhcmEgZW52aW8gaW5saW5lIGFvIEdlbWluaQogKi8KZXhwb3J0IGZ1bmN0aW9uIGFycmF5QnVmZmVyVG9CYXNlNjQoYnVmZmVyOiBBcnJheUJ1ZmZlcik6IHN0cmluZyB7CiAgY29uc3QgYnl0ZXMgPSBuZXcgVWludDhBcnJheShidWZmZXIpOwogIGxldCBiaW5hcnkgPSAiIjsKICBjb25zdCBjaHVua1NpemUgPSAweDgwMDA7CiAgZm9yIChsZXQgaSA9IDA7IGkgPCBieXRlcy5sZW5ndGg7IGkgKz0gY2h1bmtTaXplKSB7CiAgICBiaW5hcnkgKz0gU3RyaW5nLmZyb21DaGFyQ29kZSguLi5ieXRlcy5zdWJhcnJheShpLCBpICsgY2h1bmtTaXplKSk7CiAgfQogIHJldHVybiBidG9hKGJpbmFyeSk7Cn0KCi8qKgogKiBCYWl4YSBvIGFycXVpdm8gZGUgYXVkaW8gKC5vZ2cpIGRvcyBzZXJ2aWRvcmVzIGRhIE1ldGEgYSBwYXJ0aXIgZG8gbWVkaWFfaWQKICovCmV4cG9ydCBhc3luYyBmdW5jdGlvbiBkb3dubG9hZFdoYXRzQXBwQXVkaW8oCiAgbWVkaWFJZDogc3RyaW5nLAogIGNvbmZpZzogV2hhdHNBcHBDb25maWcKKTogUHJvbWlzZTx7IGJhc2U2NERhdGE6IHN0cmluZzsgbWltZVR5cGU6IHN0cmluZyB9PiB7CiAgLy8gUGFzc28gMTogT2J0ZXIgYSBVUkwgdGVtcG9yYXJpYSBkbyBhcnF1aXZvIGRlIG1pZGlhCiAgY29uc3QgbWV0YVJlc3BvbnNlID0gYXdhaXQgZmV0Y2goCiAgICBgaHR0cHM6Ly9ncmFwaC5mYWNlYm9vay5jb20vdjIxLjAvJHttZWRpYUlkfWAsCiAgICB7CiAgICAgIG1ldGhvZDogIkdFVCIsCiAgICAgIGhlYWRlcnM6IHsKICAgICAgICBBdXRob3JpemF0aW9uOiBgQmVhcmVyICR7Y29uZmlnLmFjY2Vzc1Rva2VufWAsCiAgICAgIH0sCiAgICB9CiAgKTsKCiAgaWYgKCFtZXRhUmVzcG9uc2Uub2spIHsKICAgIGNvbnN0IGVyclRleHQgPSBhd2FpdCBtZXRhUmVzcG9uc2UudGV4dCgpOwogICAgdGhyb3cgbmV3IEVycm9yKAogICAgICBgRmFsaGEgYW8gY29uc3VsdGFyIG1ldGFkYWRvcyBkYSBtaWRpYSAoJHttZXRhUmVzcG9uc2Uuc3RhdHVzfSk6ICR7ZXJyVGV4dH1gCiAgICApOwogIH0KCiAgY29uc3QgbWVkaWFJbmZvID0gKGF3YWl0IG1ldGFSZXNwb25zZS5qc29uKCkpIGFzIHsKICAgIHVybDogc3RyaW5nOwogICAgbWltZV90eXBlPzogc3RyaW5nOwogIH07CgogIC8vIFBhc3NvIDI6IEJhaXhhciBvcyBieXRlcyByZWFpcyBkbyBhcnF1aXZvIGRlIGF1ZGlvIHVzYW5kbyBhIFVSTCByZXRvcm5hZGEKICBjb25zdCBiaW5hcnlSZXNwb25zZSA9IGF3YWl0IGZldGNoKG1lZGlhSW5mby51cmwsIHsKICAgIG1ldGhvZDogIkdFVCIsCiAgICBoZWFkZXJzOiB7CiAgICAgIEF1dGhvcml6YXRpb246IGBCZWFyZXIgJHtjb25maWcuYWNjZXNzVG9rZW59YCwKICAgIH0sCiAgfSk7CgogIGlmICghYmluYXJ5UmVzcG9uc2Uub2spIHsKICAgIGNvbnN0IGVyclRleHQgPSBhd2FpdCBiaW5hcnlSZXNwb25zZS50ZXh0KCk7CiAgICB0aHJvdyBuZXcgRXJyb3IoCiAgICAgIGBGYWxoYSBhbyBiYWl4YXIgYmluYXJpbyBkZSBhdWRpbyAoJHtiaW5hcnlSZXNwb25zZS5zdGF0dXN9KTogJHtlcnJUZXh0fWAKICAgICk7CiAgfQoKICBjb25zdCBhcnJheUJ1ZmZlciA9IGF3YWl0IGJpbmFyeVJlc3BvbnNlLmFycmF5QnVmZmVyKCk7CiAgY29uc3QgYmFzZTY0RGF0YSA9IGFycmF5QnVmZmVyVG9CYXNlNjQoYXJyYXlCdWZmZXIpOwogIGNvbnN0IHJhd01pbWUgPSBtZWRpYUluZm8ubWltZV90eXBlIHx8ICJhdWRpby9vZ2ciOwogIGNvbnN0IGNsZWFuTWltZVR5cGUgPSByYXdNaW1lLnNwbGl0KCI7IilbMF0udHJpbSgpOwoKICByZXR1cm4gewogICAgYmFzZTY0RGF0YSwKICAgIG1pbWVUeXBlOiBjbGVhbk1pbWVUeXBlLAogIH07Cn0KCi8qKgogKiBFbnZpYSB1bWEgbWVuc2FnZW0gZGUgdGV4dG8gZGlyZXRhIHBhcmEgbyB1c3VhcmlvIG5vIFdoYXRzQXBwCiAqLwpleHBvcnQgYXN5bmMgZnVuY3Rpb24gc2VuZFdoYXRzQXBwVGV4dCgKICB0b1Bob25lOiBzdHJpbmcsCiAgdGV4dEJvZHk6IHN0cmluZywKICBjb25maWc6IFdoYXRzQXBwQ29uZmlnCik6IFByb21pc2U8dm9pZD4gewogIGNvbnN0IHJlc3BvbnNlID0gYXdhaXQgZmV0Y2goCiAgICBgaHR0cHM6Ly9ncmFwaC5mYWNlYm9vay5jb20vdjIxLjAvJHtjb25maWcucGhvbmVOdW1iZXJJZH0vbWVzc2FnZXNgLAogICAgewogICAgICBtZXRob2Q6ICJQT1NUIiwKICAgICAgaGVhZGVyczogewogICAgICAgIEF1dGhvcml6YXRpb246IGBCZWFyZXIgJHtjb25maWcuYWNjZXNzVG9rZW59YCwKICAgICAgICAiQ29udGVudC1UeXBlIjogImFwcGxpY2F0aW9uL2pzb24iLAogICAgICB9LAogICAgICBib2R5OiBKU09OLnN0cmluZ2lmeSh7CiAgICAgICAgbWVzc2FnaW5nX3Byb2R1Y3Q6ICJ3aGF0c2FwcCIsCiAgICAgICAgcmVjaXBpZW50X3R5cGU6ICJpbmRpdmlkdWFsIiwKICAgICAgICB0bzogdG9QaG9uZSwKICAgICAgICB0eXBlOiAidGV4dCIsCiAgICAgICAgdGV4dDogewogICAgICAgICAgcHJldmlld191cmw6IGZhbHNlLAogICAgICAgICAgYm9keTogdGV4dEJvZHksCiAgICAgICAgfSwKICAgICAgfSksCiAgICB9CiAgKTsKCiAgaWYgKCFyZXNwb25zZS5vaykgewogICAgY29uc3QgZXJyVGV4dCA9IGF3YWl0IHJlc3BvbnNlLnRleHQoKTsKICAgIHRocm93IG5ldyBFcnJvcigKICAgICAgYEZhbGhhIGFvIGVudmlhciBtZW5zYWdlbSBXaGF0c0FwcCAoJHtyZXNwb25zZS5zdGF0dXN9KTogJHtlcnJUZXh0fWAKICAgICk7CiAgfQp9CgovKioKICogTWFyY2EgYSBtZW5zYWdlbSByZWNlYmlkYSBjb21vIGxpZGEgbm8gV2hhdHNBcHAKICovCmV4cG9ydCBhc3luYyBmdW5jdGlvbiBtYXJrTWVzc2FnZUFzUmVhZCgKICBtZXNzYWdlSWQ6IHN0cmluZywKICBjb25maWc6IFdoYXRzQXBwQ29uZmlnCik6IFByb21pc2U8dm9pZD4gewogIGF3YWl0IGZldGNoKAogICAgYGh0dHBzOi8vZ3JhcGguZmFjZWJvb2suY29tL3YyMS4wLyR7Y29uZmlnLnBob25lTnVtYmVySWR9L21lc3NhZ2VzYCwKICAgIHsKICAgICAgbWV0aG9kOiAiUE9TVCIsCiAgICAgIGhlYWRlcnM6IHsKICAgICAgICBBdXRob3JpemF0aW9uOiBgQmVhcmVyICR7Y29uZmlnLmFjY2Vzc1Rva2VufWAsCiAgICAgICAgIkNvbnRlbnQtVHlwZSI6ICJhcHBsaWNhdGlvbi9qc29uIiwKICAgICAgfSwKICAgICAgYm9keTogSlNPTi5zdHJpbmdpZnkoewogICAgICAgIG1lc3NhZ2luZ19wcm9kdWN0OiAid2hhdHNhcHAiLAogICAgICAgIHN0YXR1czogInJlYWQiLAogICAgICAgIG1lc3NhZ2VfaWQ6IG1lc3NhZ2VJZCwKICAgICAgfSksCiAgICB9CiAgKS5jYXRjaCgoKSA9PiB7CiAgICAvLyBGYWxoYSBuYW8gY3JpdGljYSBjYXNvIGEgbWFyY2FjYW8gZGUgbGVpdHVyYSBhdHJhc2UKICB9KTsKfQo=
+/**
+ * Cliente para a WhatsApp Cloud API (Meta Graph API v21.0)
+ * Responsavel por baixar midias de audio (.ogg) e enviar respostas de texto.
+ */
+
+export interface WhatsAppConfig {
+  accessToken: string;
+  phoneNumberId: string;
+}
+
+/**
+ * Converte um ArrayBuffer em string Base64 para envio inline ao Gemini
+ */
+export function arrayBufferToBase64(buffer: ArrayBuffer): string {
+  const bytes = new Uint8Array(buffer);
+  let binary = "";
+  const chunkSize = 0x8000;
+  for (let i = 0; i < bytes.length; i += chunkSize) {
+    binary += String.fromCharCode(...bytes.subarray(i, i + chunkSize));
+  }
+  return btoa(binary);
+}
+
+/**
+ * Baixa o arquivo de audio (.ogg) dos servidores da Meta a partir do media_id
+ */
+export async function downloadWhatsAppAudio(
+  mediaId: string,
+  config: WhatsAppConfig
+): Promise<{ base64Data: string; mimeType: string }> {
+  // Passo 1: Obter a URL temporaria do arquivo de midia
+  const metaResponse = await fetch(
+    `https://graph.facebook.com/v21.0/${mediaId}`,
+    {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${config.accessToken}`,
+      },
+    }
+  );
+
+  if (!metaResponse.ok) {
+    const errText = await metaResponse.text();
+    throw new Error(
+      `Falha ao consultar metadados da midia (${metaResponse.status}): ${errText}`
+    );
+  }
+
+  const mediaInfo = (await metaResponse.json()) as {
+    url: string;
+    mime_type?: string;
+  };
+
+  // Passo 2: Baixar os bytes reais do arquivo de audio usando a URL retornada
+  const binaryResponse = await fetch(mediaInfo.url, {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${config.accessToken}`,
+    },
+  });
+
+  if (!binaryResponse.ok) {
+    const errText = await binaryResponse.text();
+    throw new Error(
+      `Falha ao baixar binario de audio (${binaryResponse.status}): ${errText}`
+    );
+  }
+
+  const arrayBuffer = await binaryResponse.arrayBuffer();
+  const base64Data = arrayBufferToBase64(arrayBuffer);
+  const rawMime = mediaInfo.mime_type || "audio/ogg";
+  const cleanMimeType = rawMime.split(";")[0].trim();
+
+  return {
+    base64Data,
+    mimeType: cleanMimeType,
+  };
+}
+
+/**
+ * Envia uma mensagem de texto direta para o usuario no WhatsApp
+ */
+export async function sendWhatsAppText(
+  toPhone: string,
+  textBody: string,
+  config: WhatsAppConfig
+): Promise<void> {
+  const response = await fetch(
+    `https://graph.facebook.com/v21.0/${config.phoneNumberId}/messages`,
+    {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${config.accessToken}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        messaging_product: "whatsapp",
+        recipient_type: "individual",
+        to: toPhone,
+        type: "text",
+        text: {
+          preview_url: false,
+          body: textBody,
+        },
+      }),
+    }
+  );
+
+  if (!response.ok) {
+    const errText = await response.text();
+    throw new Error(
+      `Falha ao enviar mensagem WhatsApp (${response.status}): ${errText}`
+    );
+  }
+}
+
+/**
+ * Marca a mensagem recebida como lida no WhatsApp
+ */
+export async function markMessageAsRead(
+  messageId: string,
+  config: WhatsAppConfig
+): Promise<void> {
+  await fetch(
+    `https://graph.facebook.com/v21.0/${config.phoneNumberId}/messages`,
+    {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${config.accessToken}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        messaging_product: "whatsapp",
+        status: "read",
+        message_id: messageId,
+      }),
+    }
+  ).catch(() => {
+    // Falha nao critica caso a marcacao de leitura atrase
+  });
+}
