@@ -1,4 +1,4 @@
-// Script de diagnostico completo de todas as APIs (Gemini, Supabase Management API, Meta WhatsApp Cloud API)
+// Script de diagnostico completo de todas as APIs (Gemini, Supabase Management API, Green-API WhatsApp)
 import { loadEnvFile } from "./setup-env.mjs";
 
 loadEnvFile();
@@ -6,9 +6,10 @@ loadEnvFile();
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "";
 const SUPABASE_PROJECT_REF = process.env.SUPABASE_PROJECT_REF || "iuwzoefqwuopftbwquij";
 const SUPABASE_ACCESS_TOKEN = process.env.SUPABASE_ACCESS_TOKEN || "";
-const META_WA_TOKEN = process.env.WHATSAPP_ACCESS_TOKEN || "";
-const PHONE_NUMBER_ID = process.env.WHATSAPP_PHONE_NUMBER_ID || "1418890021300333";
-const WABA_ID = process.env.WHATSAPP_BUSINESS_ACCOUNT_ID || "4102165980086842";
+
+const GREEN_API_URL = (process.env.GREEN_API_URL || "https://api.green-api.com").replace(/\/+$/, "");
+const GREEN_ID_INSTANCE = process.env.GREEN_API_ID_INSTANCE || "";
+const GREEN_API_TOKEN = process.env.GREEN_API_TOKEN_INSTANCE || "";
 
 async function testGemini() {
   console.log("\n--- 1. TESTANDO GOOGLE GEMINI API ---");
@@ -81,24 +82,6 @@ async function testSupabaseCLI() {
         `[OK] Projeto Supabase '${data.name}' (${SUPABASE_PROJECT_REF}) - Status: '${data.status}'`
       );
 
-      const keysRes = await fetch(
-        `https://api.supabase.com/v1/projects/${SUPABASE_PROJECT_REF}/api-keys`,
-        {
-          headers: { Authorization: `Bearer ${SUPABASE_ACCESS_TOKEN}` },
-        }
-      );
-      if (keysRes.ok) {
-        const keys = await keysRes.json();
-        console.log(
-          "[OK] API Keys disponiveis:",
-          keys.map((k) => ({
-            name: k.name,
-            type: k.type,
-            prefix: k.api_key ? k.api_key.slice(0, 15) + "..." : "N/A",
-          }))
-        );
-      }
-
       const secRes = await fetch(
         `https://api.supabase.com/v1/projects/${SUPABASE_PROJECT_REF}/secrets`,
         {
@@ -138,61 +121,47 @@ async function testSupabaseCLI() {
   }
 }
 
-async function testMeta() {
-  console.log("\n--- 3. TESTANDO META GRAPH API (WHATSAPP) ---");
-  if (!META_WA_TOKEN) {
-    console.error("[FAIL] WHATSAPP_ACCESS_TOKEN nao configurado no arquivo .env");
+async function testGreenApi() {
+  console.log("\n--- 3. TESTANDO GREEN-API (WHATSAPP) ---");
+  if (!GREEN_ID_INSTANCE || !GREEN_API_TOKEN) {
+    console.warn(
+      "[PENDENTE] GREEN_API_ID_INSTANCE ou GREEN_API_TOKEN_INSTANCE ainda nao preenchidos no arquivo .env"
+    );
     return;
   }
 
   try {
-    const phoneRes = await fetch(
-      `https://graph.facebook.com/v21.0/${PHONE_NUMBER_ID}?fields=display_phone_number,verified_name,code_verification_status,quality_rating`,
-      {
-        headers: { Authorization: `Bearer ${META_WA_TOKEN}` },
-      }
+    const stateRes = await fetch(
+      `${GREEN_API_URL}/waInstance${GREEN_ID_INSTANCE}/getStateInstance/${GREEN_API_TOKEN}`
     );
-    const phoneData = await phoneRes.json();
-    if (phoneRes.ok) {
-      console.log("[OK] Phone Number ID:", phoneData);
+    const stateData = await stateRes.json();
+    if (stateRes.ok) {
+      console.log("[OK] Estado da Instancia Green-API:", stateData);
     } else {
-      console.error("[FAIL] Phone Number ID:", phoneRes.status, phoneData);
+      console.error("[FAIL] Estado da Instancia Green-API:", stateRes.status, stateData);
     }
 
-    const wabaRes = await fetch(
-      `https://graph.facebook.com/v21.0/${WABA_ID}?fields=name,timezone_id,message_template_namespace`,
-      {
-        headers: { Authorization: `Bearer ${META_WA_TOKEN}` },
-      }
+    const settingsRes = await fetch(
+      `${GREEN_API_URL}/waInstance${GREEN_ID_INSTANCE}/getSettings/${GREEN_API_TOKEN}`
     );
-    const wabaData = await wabaRes.json();
-    if (wabaRes.ok) {
-      console.log("[OK] WABA:", wabaData);
-    } else {
-      console.error("[FAIL] WABA:", wabaRes.status, wabaData);
-    }
-
-    const subsRes = await fetch(
-      `https://graph.facebook.com/v21.0/${WABA_ID}/subscribed_apps`,
-      {
-        headers: { Authorization: `Bearer ${META_WA_TOKEN}` },
-      }
-    );
-    const subsData = await subsRes.json();
-    if (subsRes.ok) {
-      console.log("[OK] Subscribed Apps:", subsData);
-    } else {
-      console.error("[FAIL] Subscribed Apps:", subsRes.status, subsData);
+    const settingsData = await settingsRes.json();
+    if (settingsRes.ok) {
+      console.log("[OK] Configuracoes de Webhook Green-API:", {
+        wid: settingsData.wid,
+        webhookUrl: settingsData.webhookUrl,
+        incomingWebhook: settingsData.incomingWebhook,
+        outgoingMessageWebhook: settingsData.outgoingMessageWebhook,
+      });
     }
   } catch (e) {
-    console.error("[ERROR] Excecao ao testar Meta:", e.message);
+    console.error("[ERROR] Excecao ao testar Green-API:", e.message);
   }
 }
 
 async function run() {
   await testGemini();
   await testSupabaseCLI();
-  await testMeta();
+  await testGreenApi();
 }
 
 run();

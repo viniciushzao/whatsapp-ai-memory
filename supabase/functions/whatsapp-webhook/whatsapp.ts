@@ -1,11 +1,18 @@
 /**
- * Cliente para a WhatsApp Cloud API (Meta Graph API v21.0)
- * Responsavel por baixar midias de audio (.ogg) e enviar respostas de texto.
+ * Cliente hibrido para WhatsApp:
+ * - Suporta GREEN-API (recomendado, sem Meta for Developers, via QR Code)
+ * - Mantem retrocompatibilidade com Meta Cloud API (v21.0)
  */
 
 export interface WhatsAppConfig {
-  accessToken: string;
-  phoneNumberId: string;
+  provider: "green-api" | "meta";
+  // Credenciais Green-API
+  greenApiUrl?: string;
+  greenIdInstance?: string;
+  greenApiTokenInstance?: string;
+  // Credenciais Meta Cloud API (legado)
+  accessToken?: string;
+  phoneNumberId?: string;
 }
 
 /**
@@ -22,13 +29,40 @@ export function arrayBufferToBase64(buffer: ArrayBuffer): string {
 }
 
 /**
+ * Baixa um arquivo de audio (.ogg) a partir de uma URL direta (Green-API downloadUrl)
+ */
+export async function downloadAudioFromUrl(
+  downloadUrl: string,
+  mimeTypeHint?: string
+): Promise<{ base64Data: string; mimeType: string }> {
+  const binaryResponse = await fetch(downloadUrl, { method: "GET" });
+
+  if (!binaryResponse.ok) {
+    const errText = await binaryResponse.text();
+    throw new Error(
+      `Falha ao baixar audio da URL (${binaryResponse.status}): ${errText}`
+    );
+  }
+
+  const arrayBuffer = await binaryResponse.arrayBuffer();
+  const base64Data = arrayBufferToBase64(arrayBuffer);
+  const rawMime =
+    mimeTypeHint || binaryResponse.headers.get("content-type") || "audio/ogg";
+  const cleanMimeType = rawMime.split(";")[0].trim();
+
+  return {
+    base64Data,
+    mimeType: cleanMimeType || "audio/ogg",
+  };
+}
+
+/**
  * Baixa o arquivo de audio (.ogg) dos servidores da Meta a partir do media_id
  */
 export async function downloadWhatsAppAudio(
   mediaId: string,
   config: WhatsAppConfig
 ): Promise<{ base64Data: string; mimeType: string }> {
-  // Passo 1: Obter a URL temporaria do arquivo de midia
   const metaResponse = await fetch(
     `https://graph.facebook.com/v21.0/${mediaId}`,
     {
@@ -51,7 +85,6 @@ export async function downloadWhatsAppAudio(
     mime_type?: string;
   };
 
-  // Passo 2: Baixar os bytes reais do arquivo de audio usando a URL retornada
   const binaryResponse = await fetch(mediaInfo.url, {
     method: "GET",
     headers: {
@@ -79,12 +112,43 @@ export async function downloadWhatsAppAudio(
 
 /**
  * Envia uma mensagem de texto direta para o usuario no WhatsApp
+ * (Suporta Green-API e Meta Cloud API)
  */
 export async function sendWhatsAppText(
-  toPhone: string,
+  toChatOrPhone: string,
   textBody: string,
   config: WhatsAppConfig
 ): Promise<void> {
+  if (config.provider === "green-api") {
+    const baseUrl = (
+      config.greenApiUrl || "https://api.green-api.com"
+    ).replace(/\/+$/, "");
+    const chatId = toChatOrPhone.includes("@")
+      ? toChatOrPhone
+      : `${toChatOrPhone.replace(/\D/g, "")}@c.us`;
+
+    const response = await fetch(
+      `${baseUrl}/waInstance${config.greenIdInstance}/sendMessage/${config.greenApiTokenInstance}`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chatId,
+          message: textBody,
+        }),
+      }
+    );
+
+    if (!response.ok) {
+      const errText = await response.text();
+      throw new Error(
+        `Falha ao enviar mensagem via Green-API (${response.status}): ${errText}`
+      );
+    }
+    return;
+  }
+
+  // Fallback: Meta Cloud API
   const response = await fetch(
     `https://graph.facebook.com/v21.0/${config.phoneNumberId}/messages`,
     {
@@ -96,7 +160,7 @@ export async function sendWhatsAppText(
       body: JSON.stringify({
         messaging_product: "whatsapp",
         recipient_type: "individual",
-        to: toPhone,
+        to: toChatOrPhone.replace(/\D/g, ""),
         type: "text",
         text: {
           preview_url: false,
@@ -119,8 +183,31 @@ export async function sendWhatsAppText(
  */
 export async function markMessageAsRead(
   messageId: string,
+  chatIdOrPhone: string,
   config: WhatsAppConfig
 ): Promise<void> {
+  if (config.provider === "green-api") {
+    const baseUrl = (
+      config.greenApiUrl || "https://api.green-api.com"
+    ).replace(/\/+$/, "");
+    const chatId = chatIdOrPhone.includes("@")
+      ? chatIdOrPhone
+      : `${chatIdOrPhone.replace(/\D/g, "")}@c.us`;
+
+    await fetch(
+      `${baseUrl}/waInstance${config.greenIdInstance}/readChat/${config.greenApiTokenInstance}`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chatId,
+          idMessage: messageId,
+        }),
+      }
+    ).catch(() => {});
+    return;
+  }
+
   await fetch(
     `https://graph.facebook.com/v21.0/${config.phoneNumberId}/messages`,
     {
@@ -135,7 +222,5 @@ export async function markMessageAsRead(
         message_id: messageId,
       }),
     }
-  ).catch(() => {
-    // Falha nao critica caso a marcacao de leitura atrase
-  });
+  ).catch(() => {});
 }

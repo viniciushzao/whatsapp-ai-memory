@@ -79,14 +79,13 @@ async function generateEnv() {
   const envContent = `# Variaveis de Ambiente - Agente de Memoria WhatsApp
 GEMINI_API_KEY=${process.env.GEMINI_API_KEY || ""}
 
-# Meta Cloud API
-WHATSAPP_ACCESS_TOKEN=${process.env.WHATSAPP_ACCESS_TOKEN || ""}
-WHATSAPP_PHONE_NUMBER_ID=${process.env.WHATSAPP_PHONE_NUMBER_ID || "1418890021300333"}
-WHATSAPP_VERIFY_TOKEN=${process.env.WHATSAPP_VERIFY_TOKEN || "token_minhameoria_rev1"}
-WHATSAPP_BUSINESS_ACCOUNT_ID=${process.env.WHATSAPP_BUSINESS_ACCOUNT_ID || "4102165980086842"}
+# Credenciais GREEN-API (WhatsApp via QR Code - https://console.green-api.com)
+GREEN_API_URL=${process.env.GREEN_API_URL || "https://api.green-api.com"}
+GREEN_API_ID_INSTANCE=${process.env.GREEN_API_ID_INSTANCE || ""}
+GREEN_API_TOKEN_INSTANCE=${process.env.GREEN_API_TOKEN_INSTANCE || ""}
 
-# Telefone autorizado
-ALLOWED_PHONE_NUMBER=${process.env.ALLOWED_PHONE_NUMBER || "5515997347481"}
+# Telefone autorizado (suporta multiplos separados por virgula)
+ALLOWED_PHONE_NUMBER=5515997347481,5515996644378
 
 # Supabase
 SUPABASE_PROJECT_REF=${PROJECT_REF}
