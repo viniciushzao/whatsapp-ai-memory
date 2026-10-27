@@ -134,7 +134,7 @@ Deno.serve(async (req: Request) => {
     // DETECCAO AUTOMATICA DE PROVEDOR: GREEN-API vs META CLOUD API
     // ------------------------------------------------------------------------
     if (payload?.typeWebhook) {
-      // Ignora mensagens disparadas pela propria API (evita loop infinito quando o bot responde)
+      // Ignora eventos que nao sejam mensagens recebidas/enviadas pelo celular
       if (
         payload.typeWebhook !== "incomingMessageReceived" &&
         payload.typeWebhook !== "outgoingMessageReceived"
@@ -148,8 +148,26 @@ Deno.serve(async (req: Request) => {
         );
       }
 
+      const instanceWid: string = payload?.instanceData?.wid || "";
       const chatId: string = payload?.senderData?.chatId || "";
       const senderJid: string = payload?.senderData?.sender || chatId;
+
+      // Se a mensagem partiu do proprio aparelho (outgoingMessageReceived),
+      // processamos APENAS se o usuario estiver enviando no chat "Mensagem para si mesmo" (chatId === instanceWid)
+      // Isso evita que conversas normais suas com amigos/clientes acionem o agente de memoria!
+      if (
+        payload.typeWebhook === "outgoingMessageReceived" &&
+        instanceWid &&
+        chatId !== instanceWid
+      ) {
+        return new Response(
+          JSON.stringify({
+            status: "ignored_outgoing_to_third_party",
+            chatId,
+          }),
+          { status: 200, headers: { "Content-Type": "application/json" } }
+        );
+      }
 
       // Ignora mensagens de grupos (@g.us)
       if (chatId.endsWith("@g.us")) {
